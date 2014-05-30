@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.w{width:990px; }
+.search{ width:318px;
+		 margin-left:10px;
+		 }
+.hotword{ margin-left:10px;  }
+.search input{
+			   width:220px;}
+.wnav{width:775px; }
+.nav ul{ width:775px;}
+.nav li a:link,.nav li a:visited{padding: 0 20px;}
+.indexgg{ width:210px;}
+.indexflash{width:545px;}
+.indexhot{ width:765px;}
+.indexhot img{width:170px; margin:0 9px;}
+.banner1 img{ width:990px;}
+.index_right{ width:210px; }
+
+.slide2 ul.lista{ zoom:1;}
+.slide2 .lista li{ vertical-align:bottom;                                                                        
+ }
+.lista li a{ display:inline-block; width:170px; overflow:hidden;text-overflow: ellipsis; 
+-o-text-overflow:ellipsis; }
+.lglist li a{ display:inline-block; width:190px; overflow:hidden;text-overflow: ellipsis; 
+-o-text-overflow:ellipsis; }
+
+.index_left{ width:770px; padding-top:10px; float:left;}
+.lptable { width:550px; }
+.ppicdiv img{  }
+.itprice{ background:url(../images/tindex_01.jpg) no-repeat; width:170px; height:41px; padding-bottom:5px; padding-left:30px;}
+
+.hotevent .eventbox {width:380px; float:left;}
+.footserve{ width:140px; }
+.ppicdiv img{ margin-left:-5px;}
+

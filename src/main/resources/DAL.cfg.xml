@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataAccessLayer>
+<!-- 
+ *
+ * 动态参数替换原则
+ * 1、每一行只有一对大括号{}，每个括号里有一个将要替换的参数
+ * 2、用$$括起来的参数（key）将会用parameterMap中的value代替
+ * 3、采用objectName.MethodName作为key放在parameterMap中
+ * 4、用##括起来的参数(key)将会用parameterMap中的key对应的value代替，一直迭代到所有变量被替代完
+ *
+ * 动态参数替换用法 
+ * 1、{之后跟?,表示如果不传值的话这个条件忽略
+ * 2、{之后紧跟!表示这个条件即使没有传值过来就采用默认值"",如果带有||则将||之前的作为默认值
+ * 3、{之后直接是参数，有则整个替换，没有则忽略，例如： { $haveShop$ }
+ *
+ -->
+	<MappingFiles>
+	    <Mapping resource="classpath*:sql/**/*.dal.xml" />
+	</MappingFiles>
+</DataAccessLayer>

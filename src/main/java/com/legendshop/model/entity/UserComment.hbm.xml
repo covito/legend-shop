@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.UserComment" table="ls_usr_comm">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="commentType" type="java.lang.Integer">
+            <column name="comment_type">
+                <comment>留言类型,1:投诉，2：普通谈话</comment>
+            </column>
+        </property>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id">
+                <comment>点评人ID</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>发起谈话的用户名称</comment>
+            </column>
+        </property>
+        <property name="yourName" type="java.lang.String">
+            <column name="your_name">
+                <comment>用户名称，由用户填写</comment>
+            </column>
+        </property>
+        <property name="toUserName" type="java.lang.String">
+            <column name="to_user_name">
+                <comment>通话对象</comment>
+            </column>
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content">
+                <comment>留言内容</comment>
+            </column>
+        </property>
+        <property name="answer" type="java.lang.String">
+            <column name="answer">
+                <comment>回复内容</comment>
+            </column>
+        </property>
+        <property name="recDate" type="java.util.Date">
+            <column name="rec_date">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+        <property name="answertime" type="java.util.Date">
+            <column name="answertime">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+        <property name="postip" type="java.lang.String">
+            <column name="postip">
+                <comment>IP来源</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>阅读状态，0：未读，1：已读</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

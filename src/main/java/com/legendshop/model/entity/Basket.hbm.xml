@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.Basket" table="ls_basket">
+        <id name="basketId" type="java.lang.Long">
+            <column name="basket_id" />
+            <generator class="native" />
+        </id>
+        <property name="prodId" type="java.lang.Long">
+            <column name="prod_id">
+                <comment>商品ID</comment>
+            </column>
+        </property>
+        <property name="pic" type="java.lang.String">
+            <column name="pic">
+                <comment>图片</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>订购的用户名</comment>
+            </column>
+        </property>
+        <property name="basketCount" type="java.lang.Integer">
+            <column name="basket_count">
+                <comment>购物车的商品数</comment>
+            </column>
+        </property>
+        <property name="basketCheck" type="java.lang.String">
+            <column name="basket_check">
+                <comment>是否已经生成订单, N: 只是存在于购物车， Y： 已经生成了订单，saveto时设置为Y</comment>
+            </column>
+        </property>
+        <property name="prodName" type="java.lang.String">
+            <column name="prod_name">
+                <comment>货物名称</comment>
+            </column>
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price">
+                <comment>货物原价</comment>
+            </column>
+        </property>
+        <property name="cash" type="java.lang.Double">
+            <column name="cash">
+                <comment>货物现价</comment>
+            </column>
+        </property>
+        <property name="carriage" type="java.lang.Double">
+            <column name="carriage">
+                <comment>运费</comment>
+            </column>
+        </property>
+        <property name="subNumber" type="java.lang.String">
+            <column name="sub_number">
+                <comment>订购流水号</comment>
+            </column>
+        </property>
+        <property name="basketDate" type="java.util.Date">
+            <column name="basket_date">
+                <comment>购物时间</comment>
+            </column>
+        </property>
+         <property name="lastUpdateDate" type="java.util.Date">
+            <column name="last_update_date">
+                <comment>最后更新时间</comment>
+            </column>
+        </property>       
+        
+        <property name="shopName" type="java.lang.String">
+            <column name="shop_name">
+                <comment>订购的店铺</comment>
+            </column>
+        </property>
+        <property name="attribute" type="java.lang.String">
+            <column name="attribute">
+                <comment>产品动态属性</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

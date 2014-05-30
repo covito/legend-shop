@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.Score" table="ls_score">
+        <id name="scoreId" type="java.lang.Long">
+            <column name="score_id" />
+            <generator class="native"/>
+        </id>
+        <property name="subId" type="java.lang.Long">
+            <column name="sub_id">
+                <comment>订单ID</comment>
+            </column>
+        </property>
+        <property name="score" type="java.lang.Long">
+            <column name="score">
+                <comment>用户积分</comment>
+            </column>
+        </property>
+        <property name="scoreType" type="java.lang.String">
+            <column name="score_type">
+                <comment>积分类型</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>所属用户</comment>
+            </column>
+        </property>
+        <property name="recDate" type="java.util.Date">
+            <column name="rec_date">
+                <comment>时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.News" table="ls_news">
+        	<!-- 
+	 <cache usage="read-write"/>
+	  -->
+        <id name="newsId" type="java.lang.Long">
+            <column name="news_id" />
+            <generator class="native" />
+        </id>
+         <many-to-one name="newsCategory" class="com.legendshop.model.entity.NewsCategory" fetch="select">
+            <column name="news_category_id" />
+         </many-to-one>
+        <many-to-one name="sort" class="com.legendshop.model.entity.Sort" fetch="select">
+            <column name="sort" />
+        </many-to-one>
+        <property name="newsTitle" type="java.lang.String">
+            <column name="news_title">
+                <comment>新闻标题</comment>
+            </column>
+        </property>
+        <property name="newsBrief" type="java.lang.String">
+            <column name="news_brief">
+                <comment>新闻提要</comment>
+            </column>
+        </property>
+        <property name="newsContent" type="java.lang.String">
+            <column name="news_content">
+                <comment>新闻内容</comment>
+            </column>
+        </property>
+        <property name="newsDate" type="java.util.Date">
+            <column name="news_date">
+                <comment>发表时间</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>新闻状态，1：上线，0：下线</comment>
+            </column>
+        </property>
+        <property name="position" type="java.lang.Integer">
+            <column name="position">
+                <comment>新闻位置</comment>
+            </column>
+        </property>
+        <property name="highLine" type="java.lang.Integer">
+            <column name="high_line">
+                <comment>是否高亮,1:yes,0:no</comment>
+            </column>
+        </property>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id">
+                <comment>用户ID</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>所属用户名称</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

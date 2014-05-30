@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.Permission" table="ls_perm">
+        <composite-id name="id" class="com.legendshop.model.entity.PerssionId">
+            <key-property name="roleId" type="java.lang.String">
+                <column name="role_id" />
+            </key-property>
+            <key-property name="functionId" type="java.lang.String">
+                <column name="function_id" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

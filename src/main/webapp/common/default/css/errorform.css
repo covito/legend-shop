@@ -1,0 +1,28 @@
+legend {
+	padding-left: 0;
+}
+
+legend,label {
+	color: #333;
+}
+
+fieldset fieldset {
+	background: none;
+}
+
+
+
+label.error, label.error {
+	/* remove the next line when you have trouble in IE6 with labels in list */
+	color: #8A1F11;
+	background: url(../images/error.gif) no-repeat left;
+	border: 1px solid #8A1F11;
+	background-color: #FEEBEB;
+	margin-left: 8px;
+	margin-right: 5px;
+	padding: 1px 8px 0px 18px;
+}
+div.error { display: none; }
+input:focus {  background-color: #FFFFEF; }
+/* input.error { border: 1px dotted red; } */
+form.indexJpgForm .gray * { color: gray; }

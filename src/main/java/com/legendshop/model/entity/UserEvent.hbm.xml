@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有, 并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.UserEvent" table="ls_event">
+        <id name="eventId" type="java.lang.Long">
+            <column name="event_id" />
+            <generator class="native" />
+        </id>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id" >
+                <comment>操作员ID</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>所属用户名称</comment>
+            </column>
+        </property>
+         <property name="modifyUser" type="java.lang.String">
+            <column name="modify_user">
+                <comment>操作员名称</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="type">
+                <comment>操作类型</comment>
+            </column>
+        </property>
+        <property name="operation" type="java.lang.String">
+            <column name="operation">
+                <comment>操作描述</comment>
+            </column>
+        </property>
+         <property name="relateId" type="java.lang.String">
+            <column name="relate_id">
+                <comment>相关数据ID</comment>
+            </column>
+        </property>
+        <property name="relateData" type="java.lang.String">
+            <column name="relate_data">
+                <comment>相关数据</comment>
+            </column>
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="create_time">
+                <comment>建立时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

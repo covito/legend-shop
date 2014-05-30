@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.NsortBrand" table="ls_ns_brand">
+        <composite-id name="id" class="com.legendshop.model.entity.NsortBrandId">
+            <key-property name="brandId" type="java.lang.Long">
+                <column name="brand_id" />
+            </key-property>
+            <key-property name="nsortId" type="java.lang.Long">
+                <column name="nsort_id" />
+            </key-property>
+        </composite-id>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>用户名</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

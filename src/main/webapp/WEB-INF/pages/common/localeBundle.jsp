@@ -1,0 +1,1 @@
+<fmt:setBundle basename="i18n/ApplicationResources"/>

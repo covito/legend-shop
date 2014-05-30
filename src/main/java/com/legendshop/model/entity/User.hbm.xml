@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.User" table="ls_user">
+        	<!-- 
+	 <cache usage="read-write"/>
+	  -->
+        <id name="id" type="java.lang.String">
+            <column name="id" />
+            <generator class="uuid" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name">
+                <comment>名称</comment>
+            </column>
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password">
+                <comment>密码</comment>
+            </column>
+        </property>
+        <property name="enabled" type="java.lang.String">
+            <column name="enabled">
+                <comment>状态</comment>
+            </column>
+        </property>
+        <property name="note" type="java.lang.String">
+            <column name="note">
+                <comment>注释</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

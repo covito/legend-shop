@@ -1,0 +1,95 @@
+@import "global_base.css";
+#topnav LI#navmyeachnet A {
+	PADDING-RIGHT: 20px; DISPLAY: block; BACKGROUND: url(../../common/style/yellow/headerbg.png) no-repeat -27px -35px; WIDTH: 48px; HEIGHT: 13px
+}
+
+#headersearch #s {
+	BORDER-RIGHT: #999999 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #999999 1px solid; DISPLAY: inline; PADDING-LEFT: 0px; BACKGROUND: url(../../common/style/yellow/headerbg.png) no-repeat 0px -94px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 1px 5px 0px 3px; BORDER-LEFT: #999999 1px solid; WIDTH: 60px; CURSOR: pointer; LINE-HEIGHT: 18px; PADDING-TOP: 0px; BORDER-BOTTOM: #999999 1px solid; HEIGHT: 20px; TEXT-ALIGN: center
+}
+
+#headerlogin A#navCartSum {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 25px; BACKGROUND: url(../../common/style/yellow/headerbg.png) no-repeat -77px -217px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+
+#headerlogin A#navCartSum {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 25px; BACKGROUND: url(../../common/style/yellow/headerbg.png) no-repeat -77px -217px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+
+#qchannel #topcatalog {
+	Z-INDEX: 15; 
+	BACKGROUND: url(../../common/style/yellow/headerbg.png) no-repeat 197px -52px; 
+	FLOAT: left; 
+	MARGIN: -42px 0px 0px; 
+	WIDTH: 217px; 
+	POSITION: absolute; HEIGHT: 42px
+}
+
+#qchannel #topcatalog H2 {
+	 BORDER-RIGHT: #cccccc 1px solid; 
+	 BORDER-TOP: #cccccc 1px solid; 
+	 BORDER-LEFT: #cccccc 1px solid; 
+	 BORDER-BOTTOM: #cccccc 1px solid; 
+	 FONT-WEIGHT: normal; 
+	 FONT-SIZE: 13px; 
+	 BACKGROUND: url(../../common/style/yellow/headerbg.png) repeat-x 0px 0px; 
+	 MARGIN: 14px 40px 8px;
+	 WIDTH: 120px;
+	 LINE-HEIGHT: 18px; 
+	 HEIGHT: 18px
+}
+
+#favourite {
+	PADDING-RIGHT: 17px; 
+	PADDING-LEFT: 10px; 
+	BACKGROUND: url(../../common/style/yellow/headerbg.png) no-repeat -78px -52px; 
+	FLOAT: right;
+	PADDING-BOTTOM: 0px; 
+	MARGIN: -42px 0px 0px; 
+	WIDTH: 190px; 
+	PADDING-TOP: 14px; 
+	HEIGHT: 28px
+}
+
+#cstyle {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 17px; BACKGROUND: url(../../common/style/yellow/headerbg.png) no-repeat 196px -52px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: -42px 0px 0px; WIDTH: 200px; PADDING-TOP: 14px; HEIGHT: 28px
+}
+
+#favourite LI {
+	BORDER-RIGHT: #cccccc 1px solid; 
+	BORDER-TOP: #cccccc 1px solid;
+	DISPLAY: inline; 
+	BACKGROUND: url(../../common/style/yellow/headerbg.png) repeat-x 0px 0px; 
+	FLOAT: left; 
+	MARGIN: 0px 0px 0px 45px; 
+	BORDER-LEFT: #cccccc 1px solid; 
+	LINE-HEIGHT: 18px;
+	BORDER-BOTTOM: #cccccc 1px solid; 
+	HEIGHT: 18px;
+	width: 120px;
+}
+
+#cstyle LI {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; DISPLAY: inline; BACKGROUND: url(../../common/style/yellow/headerbg.png) repeat-x 0px 0px; FLOAT: left; MARGIN: 0px 0px 0px 4px; BORDER-LEFT: #cccccc 1px solid; LINE-HEIGHT: 18px; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 18px
+}
+
+#cstyle LI.d A {
+	PADDING-RIGHT: 11px; PADDING-LEFT: 20px; BACKGROUND: url(../../common/style/yellow/headerbg.png) no-repeat -85px -95px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+
+#searchwrapper {
+	BACKGROUND: url(../../common/style/yellow/headerbg.png) repeat-x 0px -156px; HEIGHT: 42px;WIDTH: 954px;
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px auto;
+}
+
+#searchwrapper #headersearch {
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	BACKGROUND: url(../../common/style/yellow/headerbg.png) repeat-x 0px -114px; 
+	PADDING-BOTTOM: 9px; 
+	MARGIN: 0px auto; 
+	OVERFLOW: hidden; 
+	WIDTH: 520px; 
+	PADDING-TOP: 9px;
+	HEIGHT: 24px; 
+	TEXT-ALIGN: center
+}

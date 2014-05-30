@@ -1,0 +1,57 @@
+.text-field {
+	color: blue;
+}
+
+.td {
+	font-size:12px;
+}
+td
+{
+	font-size:12px;
+}.line {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.OkMsg{
+	padding:5px 5px 5px 25px;
+	border:1px solid #00BE00;
+	background:#E6FFE6 url(imgs/standard_msg_ok.gif) 5px 5px no-repeat;
+	color:#000;
+	height:18px;
+}
+.WarningMsg{
+	padding:5px 5px 5px 25px;
+	border:1px solid #00A8FF;
+	background:#E2F5FF url(imgs/standard_msg_warning.gif) 5px 5px no-repeat;	
+	color:#000;
+	height:18px;
+}
+.ErrorMsg{
+	padding:5px 5px 5px 25px;
+	border:1px solid #F60;
+	background:#FFF2E9 url(imgs/standard_msg_error.gif) 5px 5px no-repeat;	
+	color:#000;
+	height:18px;
+}
+
+.btn
+{
+width:130px;
+height:30px;
+}
+.inp {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FF0099;
+}

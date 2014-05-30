@@ -1,0 +1,21 @@
+.goodsAttributeTable {
+	border-collapse: collapse;
+	border-spacing: 0px;
+	width: 100%;
+	margin-top: 5px;
+}
+
+.goodsAttributeTable th {
+	background-color: #F3F3F3;
+	border: 1px solid #D6D6D6;
+	line-height: 30px;
+	padding-right: 10px;
+	text-align: right;
+	width: 150px;
+}
+
+.goodsAttributeTable td {
+	border: 1px solid #D6D6D6;
+	line-height: 30px;
+	padding-right: 10px;
+}

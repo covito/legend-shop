@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有, 并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.CashFlow" table="ls_cash_flow">
+        <id name="flowId" type="java.lang.Long">
+            <column name="flow_id" />
+            <generator class="native" />
+        </id>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id">
+                <comment>用户ID</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>用户名称</comment>
+            </column>
+        </property>
+        <property name="operatorId" type="java.lang.String">
+            <column name="admin_id">
+                <comment>操作管理员ID</comment>
+            </column>
+        </property>
+        <property name="detailId" type="java.lang.String">
+            <column name="detail_id">
+                <comment>项目编号</comment>
+            </column>
+        </property>
+        <property name="detail" type="java.lang.String">
+            <column name="detail">
+                <comment>详细信息</comment>
+            </column>
+        </property>
+        <property name="direction" type="java.lang.String">
+            <column name="direction">
+                <comment>金额流动情况(Credit or Debit)</comment>
+            </column>
+        </property>
+        <property name="money" type="java.lang.Double">
+            <column name="money" precision="15">
+                <comment>金额数量</comment>
+            </column>
+        </property>
+        <property name="action" type="java.lang.String">
+            <column name="action">
+                <comment>金额用途</comment>
+            </column>
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="create_time">
+                <comment>金额变动时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

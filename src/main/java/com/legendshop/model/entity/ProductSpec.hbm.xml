@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 
+ * 
+ * LegendShop 多用户商城系统
+ * 
+ *  版权所有,并保留所有权利。
+ * 
+  -->
+<hibernate-mapping>
+	<class name="com.legendshop.model.entity.ProductSpec" table="ls_prod_spec">
+		<id name="prodSpecId" column="prod_spec_id" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+    	<property name="productId" column="product_id" type="java.lang.Long" />
+    	<property name="propId" column="prop_id" type="java.lang.Long" />
+    	<property name="valueId" column="value_id" type="java.lang.Long" />
+    	<property name="isSku" column="is_sku" type="java.lang.Short" />
+    	<property name="skuId" column="sku_id" type="java.lang.Long" />
+    	<property name="modifyDate" column="modify_date" type="java.util.Date" />
+    	<property name="recDate" column="rec_date" type="java.util.Date" />
+    	<property name="pic" column="pic" type="java.lang.String" />
+	</class>
+</hibernate-mapping>

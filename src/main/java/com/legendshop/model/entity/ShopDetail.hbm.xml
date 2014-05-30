@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.ShopDetail" table="ls_shop_detail">
+        <id name="shopId" type="java.lang.Long">
+            <column name="shop_id"/>
+            <generator class="native" />
+        </id>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id">
+                <comment>userId</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>对应用户名称</comment>
+            </column>
+        </property>
+        <property name="siteName" type="java.lang.String">
+            <column name="site_name">
+                <comment>站点名称</comment>
+            </column>
+        </property>
+        <property name="shopAddr" type="java.lang.String">
+            <column name="shop_addr">
+                <comment>网店地址</comment>
+            </column>
+        </property>
+        <property name="bankCard" type="java.lang.String">
+            <column name="bank_card">
+                <comment>银行汇款帐号</comment>
+            </column>
+        </property>
+        <property name="payee" type="java.lang.String">
+            <column name="payee">
+                <comment>收款人姓名</comment>
+            </column>
+        </property>
+        <property name="code" type="java.lang.String">
+            <column name="code">
+                <comment>邮政编码</comment>
+            </column>
+        </property>
+        <property name="postAddr" type="java.lang.String">
+            <column name="post_addr">
+                <comment>邮局汇款地址</comment>
+            </column>
+        </property>
+        <property name="recipient" type="java.lang.String">
+            <column name="recipient">
+                <comment>邮递接收人</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>状态,是否上线1：在线，0下线，-1审核中,-2拒绝</comment>
+            </column>
+        </property>
+        <property name="visitTimes" type="java.lang.Integer">
+            <column name="visit_times">
+                <comment>访问人数</comment>
+            </column>
+        </property>
+        <property name="productNum" type="java.lang.Integer">
+            <column name="product_num">
+                <comment>产品数量</comment>
+            </column>
+        </property>
+        <property name="offProductNum" type="java.lang.Integer">
+            <column name="off_product_num">
+                <comment>下线产品数量</comment>
+            </column>
+        </property>
+        <property name="commNum" type="java.lang.Integer">
+            <column name="comm_num">
+                <comment>用户评论数量</comment>
+            </column>
+        </property>
+        <property name="modifyDate" type="java.util.Date">
+            <column name="modify_date">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+        <property name="recDate" type="java.util.Date">
+            <column name="rec_date">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+        <property name="briefDesc" type="java.lang.String">
+            <column name="brief_desc">
+                <comment>店铺简述</comment>
+            </column>
+        </property>
+        <property name="detailDesc" type="java.lang.String">
+            <column name="detail_desc">
+                <comment>店铺详细描述</comment>
+            </column>
+        </property>
+        <property name="shopPic" type="java.lang.String">
+            <column name="shop_pic">
+                <comment>店铺图片</comment>
+            </column>
+        </property>
+        <property name="logoPic" type="java.lang.String">
+            <column name="logo_pic">
+                <comment>Logo图片</comment>
+            </column>
+        </property>
+        <property name="gradeId" type="java.lang.Integer">
+            <column name="grade_id">
+                <comment>商铺等级</comment>
+            </column>
+        </property> 
+        <property name="type" type="java.lang.Integer">
+            <column name="type">
+                <comment>商铺等级</comment>
+            </column>
+        </property> 
+        <property name="idCardPic" type="java.lang.String">
+            <column name="id_card_pic">
+                <comment>身份证验证图片</comment>
+            </column>
+        </property>  
+        <property name="trafficPic" type="java.lang.String">
+            <column name="traffic_pic">
+                <comment>营业执照图片</comment>
+            </column>
+        </property> 
+        <property name="idCardNum" type="java.lang.String">
+            <column name="id_card_num">
+                <comment>身份证号码</comment>
+            </column>
+        </property> 
+        <property name="createCountryCode" type="java.lang.String">
+            <column name="create_country_code">
+                <comment>创建时的国家码</comment>
+            </column>
+        </property>
+        <property name="createAreaCode" type="java.lang.String">
+            <column name="create_area_code">
+                <comment>创建时的地区</comment>
+            </column>
+        </property> 
+        <property name="provinceid" type="java.lang.Integer">
+            <column name="provinceid">
+                <comment>省份</comment>
+            </column>
+        </property>
+        <property name="cityid" type="java.lang.Integer">
+            <column name="cityid">
+                <comment>城市</comment>
+            </column>
+        </property> 
+        <property name="areaid" type="java.lang.Integer">
+            <column name="areaid">
+                <comment>地区</comment>
+            </column>
+        </property>
+        <property name="frontEndTemplet" type="java.lang.String">
+            <column name="fe_templet">
+                <comment>前台模版</comment>
+            </column>
+        </property>  
+         <property name="backEndTemplet" type="java.lang.String">
+            <column name="be_templet">
+                <comment>后台模版</comment>
+            </column>
+        </property>  
+         <property name="frontEndLanguage" type="java.lang.String">
+            <column name="fe_lang">
+                <comment>前台语言类型</comment>
+            </column>
+        </property>  
+         <property name="backEndLanguage" type="java.lang.String">
+            <column name="be_lang">
+                <comment>后台语言类型</comment>
+            </column>
+        </property>  
+        <property name="frontEndStyle" type="java.lang.String">
+            <column name="fe_style">
+                <comment>前台风格</comment>
+            </column>
+        </property>
+        <property name="backEndStyle" type="java.lang.String">
+            <column name="be_style">
+                <comment>后台风格</comment>
+            </column>
+        </property> 
+        <property name="domainName" type="java.lang.String">
+            <column name="domain_name">
+                <comment>独立域名</comment>
+            </column>
+        </property> 
+        <property name="icpInfo" type="java.lang.String">
+            <column name="icp_info">
+                <comment>备案信息</comment>
+            </column>
+        </property> 
+       <property name="capital" type="java.lang.Double">
+            <column name="capital">
+                <comment>商家的现金</comment>
+            </column>
+        </property> 
+        <property name="credit" type="java.lang.Integer">
+            <column name="credit">
+                <comment>商家信誉度</comment>
+            </column>
+        </property> 
+    </class>
+</hibernate-mapping>

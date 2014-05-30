@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited by Newway -->
+
+<DataAccessLayer>
+	<BusinessObjects>
+		<Object objectName="search">
+		     <!--
+	      	select new Product(prod.prodId, prod.name, prod.cash,  prod.userId, sd.cityid, sd.provinceid,  sd.areaid, prod.recDate,  prod.content) from Product prod ,ShopDetail sd
+			where prod.userId = sd.userId  and prod.prodId > ? and prod.prodId < ?
+			-->
+			<!--  add buys and commentNum 
+			
+		   select new Product(prod.prodId, prod.name, prod.cash,  prod.userId, sd.cityid, sd.provinceid,  sd.areaid, prod.recDate,  prod.content,prod.buys,
+	      	(select count(*) as commentNum from ProductComment pc where  prod.prodId = pc.prodId ) as commentNum
+	      	) from Product prod ,ShopDetail sd
+			where prod.userId = sd.userId  and prod.prodId > ? and prod.prodId < ?
+			-->
+        <Method name="getProductToIndex"><![CDATA[
+			select prod.prod_id as prodId , prod.name, prod.cash,  prod.user_id as userId, sd.cityid, sd.provinceid,  sd.areaid, prod.rec_date as recDate,  prod.content,prod.buys,
+			(select count(*) as commentNum from ls_prod_comm pc where  prod.prod_id = pc.prod_id ) as commentNum
+			from ls_shop_detail sd, ls_prod prod where
+			sd.user_id = prod.user_id and prod.prod_id > ? and prod.prod_id < ?
+            ]]></Method>
+		</Object>
+	</BusinessObjects>
+</DataAccessLayer>

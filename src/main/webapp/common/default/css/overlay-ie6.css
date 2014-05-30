@@ -1,0 +1,26 @@
+#overlay {
+    background-image:url('../images/overlay_IE6.gif');
+    color:#fff;
+}
+
+
+/* default close button positioned on upper right corner */
+div.overlay .close {
+    background-image:url('../images/overlay_close_IE6.gif');
+    position:absolute;
+    right:5px;
+    top:5px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+
+div.apple_overlay {
+    background-image:url('../images/overlay_IE6.gif');
+    color:#fff;
+}
+
+div.apple_overlay .close {
+    background-image:url('../images/overlay_close_IE6.gif');
+
+}   

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+
+	<description>LegendShop Tag Libraries</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>LegendShop</short-name>
+	<uri>http://www.legendesign.net/tags</uri>
+
+	<!-- I18n -->
+	<tag>
+		<name>i18n</name>
+		<tag-class>com.legendshop.core.tag.I18nTag</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>key</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+
+	<!-- Link -->
+	<tag>
+		<name>url</name>
+		<tag-class>com.legendshop.core.tag.URLTag</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>address</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>encode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- TemplateResource -->
+	<tag>
+		<name>templateResource</name>
+		<tag-class>com.legendshop.core.tag.TemplateResourceTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>item</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- ImageTag -->
+	<tag>
+		<name>images</name>
+		<tag-class>com.legendshop.core.tag.ImagesTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>item</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>scale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>photo</name>
+		<tag-class>com.legendshop.core.tag.PhotoTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>item</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- Settings -->
+	<tag>
+		<name>settings</name>
+		<tag-class>com.legendshop.core.tag.SettingsTag</tag-class>
+		<body-content>scriptless</body-content>
+
+		<attribute>
+			<name>key</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+		<!-- Plugin -->
+	<tag>
+		<name>plugin</name>
+		<tag-class>com.legendshop.core.tag.PluginTag</tag-class>
+		<body-content>scriptless</body-content>
+
+		<attribute>
+			<name>pluginId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+		<!-- Domain -->
+	<tag>
+		<name>domain</name>
+		<tag-class>com.legendshop.core.tag.ShopDomainTag</tag-class>
+		<body-content>scriptless</body-content>
+
+		<attribute>
+			<name>shopName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+<!-- myshop -->
+	<tag>
+		<name>myshop</name>
+		<tag-class>com.legendshop.core.tag.MyShopTag</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+
+	<tag>
+		<name>auth</name>
+		<tag-class>com.legendshop.core.tag.AuthorizeActionTag</tag-class>
+		<body-content>scriptless</body-content>
+		<description>
+			A simple tag to output or not the body of the tag if the principal
+			has or doesn't have certain authorities.
+		</description>
+
+		<attribute>
+			<name>ifNotGranted</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				A comma separated list of roles which the user must not have
+				for the body to be output.
+			</description>
+		</attribute>
+
+		<attribute>
+			<name>ifAllGranted</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				A comma separated list of roles which the user must all
+				possess for the body to be output.
+			</description>
+		</attribute>
+
+		<attribute>
+			<name>ifAnyGranted</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				A comma separated list of roles, one of which the user must
+				possess for the body to be output.
+			</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>optionGroup</name>
+		<tag-class>com.legendshop.core.tag.OptionGroupTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>
+				"select" / "radio" / "checkbox" / "json" / "label"
+			</description>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				Specify the name of radio group. Required if radio
+			</description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				Specify the value of select.&lt;br&gt; Specify the
+				selected Option.
+			</description>
+			<name>selectedValue</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				"false" is default value.&lt;br&gt; And "--请选择--" will
+				disappear if set it "true".
+			</description>
+			<name>required</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description>
+				column num for radio group to break line.
+			</description>
+			<name>cols</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				Specify if the datasource is the
+				CodeTableCache.&lt;br&gt; And true for yes.
+			</description>
+			<name>cache</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description>
+				Specify the TableName as dataSource.(If hql is NOT
+				specified)
+			</description>
+			<name>beanName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				Specify the field for value of option.(If hql is NOT
+				specified)
+			</description>
+			<name>beanId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				Specify the field for display of option.(If hql is NOT
+				specified)
+			</description>
+			<name>beanDisp</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Specify the HQL.</description>
+			<name>hql</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Specify the sQL.</description>
+			<name>sql</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				Specify the single parameter of HQL.
+			</description>
+			<name>param</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Specify the parameters of HQL.</description>
+			<name>params</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>
+				Specify the display of Empty String.
+			</description>
+			<name>defaultDisp</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description>
+				Specify exclude list for select
+			</description>
+			<name>exclude</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- legendshop cache -->
+	<tag>
+		<name>cache</name>
+		<tag-class>com.legendshop.core.tag.CacheTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>key</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cacheName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- Functions -->
+	<function>
+		<name>contains</name>
+		<function-class>com.legendshop.core.tag.Functions</function-class>
+		<function-signature>boolean contains(java.util.List, java.lang.Object)
+		</function-signature>
+	</function>
+
+	<function>
+		<name>replacePlaceHolder</name>
+		<function-class>com.legendshop.core.tag.Functions</function-class>
+		<function-signature>java.lang.String lastPage(java.lang.String,
+			java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>replacePlaceHolderOfTemplate</name>
+		<function-class>com.legendshop.core.tag.Functions</function-class>
+		<function-signature>java.lang.String rankingTitle(java.lang.String,
+			java.lang.String[])</function-signature>
+	</function>
+
+</taglib>

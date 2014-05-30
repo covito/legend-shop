@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>LegendShop Electronic Business Software</display-name>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:spring/applicationContext.xml</param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>legendFilter</filter-name>
+		<filter-class>com.legendshop.core.helper.LegendFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>com.legendshop.core.security.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter>
+		<filter-name>ResponseHeaderFilter</filter-name>
+		<filter-class>com.legendshop.core.photo.ResponseHeaderFilter</filter-class>
+		<init-param>
+			<param-name>Cache-Control</param-name>
+			<param-value>max-age=3600</param-value>
+		</init-param>
+		<!-- <init-param> <param-name>Expires</param-name> <param-value>86400</param-value> 
+			</init-param> -->
+	</filter>
+	<filter-mapping>
+		<filter-name>legendFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ResponseHeaderFilter</filter-name>
+		<url-pattern>/photoserver/photo/*</url-pattern>
+	</filter-mapping>
+
+	<!-- listener -->
+	<listener>
+		<listener-class>com.legendshop.core.listener.PluginContextListener</listener-class>
+	</listener>
+	<!-- - Publishes events for session creation and destruction through the 
+		application - context. Optional unless concurrent session control is being 
+		used. <listener> <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class> 
+		</listener> -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.legendshop.core.listener.InitSysListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>legendshopmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath*:spring/applicationContext-mvc.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>publishEvents</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<load-on-startup>100</load-on-startup>
+	</servlet>
+	<!-- fckeditor start -->
+	<servlet>
+		<servlet-name>ConnectorServlet</servlet-name>
+		<servlet-class>net.fckeditor.connector.ConnectorServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</servlet>
+	<!-- fckeditor end 分发器 控制器配置 -->
+	<servlet>
+		<servlet-name>DownloadFileServlet</servlet-name>
+		<servlet-class>com.legendshop.business.common.download.DownloadFileServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>photo-servlet</servlet-name>
+		<servlet-class>com.legendshop.core.photo.PhotoServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>image-servlet</servlet-name>
+		<servlet-class>com.legendshop.core.photo.ImagesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>Jcaptcha</servlet-name>
+		<servlet-class>com.legendshop.core.randing.JcaptchaServlet</servlet-class>
+	</servlet>
+	<!-- servlet mapping -->
+	<servlet-mapping>
+		<servlet-name>legendshopmvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ConnectorServlet</servlet-name>
+		<url-pattern>/plugins/fckeditor/editor/filemanager/connectors/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DownloadFileServlet</servlet-name>
+		<url-pattern>/servlet/downloadfileservlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>image-servlet</servlet-name>
+		<url-pattern>/photoserver/images/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>photo-servlet</servlet-name>
+		<url-pattern>/photoserver/photo/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Jcaptcha</servlet-name>
+		<url-pattern>/captcha.svl</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>/home</welcome-file>
+	</welcome-file-list>
+	<!-- <login-config> <auth-method>BASIC</auth-method> </login-config> -->
+	
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/common/jsp/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/common/jsp/500.jsp</location>
+	</error-page>
+</web-app>

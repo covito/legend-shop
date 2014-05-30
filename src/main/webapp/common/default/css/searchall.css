@@ -1,0 +1,9 @@
+BODY {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #ffffff; PADDING-BOTTOM: 0px; MARGIN: 0px auto; PADDING-TOP: 0px;}
+a:visited {  text-decoration: underline }
+a:hover {  text-decoration: underline }
+a:active { text-decoration: underline }
+a:link { text-decoration: underline }
+.kw{width:404px;height:22px;padding:4px 7px;padding:6px 7px 2px\9;font:16px arial;background:url(../images/i2.png) no-repeat;border:1px solid #cdcdcd;border-color:#9a9a9a #cdcdcd #cdcdcd #9a9a9a;vertical-align:top}
+.btn{width:95px;height:32px;padding:0;padding-top:2px\9;border:0;background:#ddd url(../images/i2.png) 0 -35px;cursor:pointer}
+.btn_h{background-position:-100px -35px}#kw,.btn_wr{margin:0 5px 0 0}
+.btn_wr{width:97px;height:34px;display:inline-block;background:url(../images/i2.png) no-repeat -202px bottom;_padding-top:1px;*position:relative}

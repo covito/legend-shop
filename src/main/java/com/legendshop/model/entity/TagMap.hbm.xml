@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+	@LegendShop 商城系统. Create in 2012-07-15 15:12:59
+-->
+<hibernate-mapping>
+	<class name="com.legendshop.model.entity.TagMap" table="ls_tag_map">
+	<id name="tagMapId" column="tag_map_id" type="java.lang.Long">
+     <generator class="native" />
+	</id>
+	<property name="tagId" column="tag_id" type="java.lang.Long" />
+	<property name="referId" column="refer_id" type="java.lang.Long" />
+	<property name="type" column="type" type="java.lang.String" />
+	<property name="startTime" column="start_time" type="java.util.Date" />
+	<property name="endTime" column="end_time" type="java.util.Date" />
+
+	</class>
+</hibernate-mapping>

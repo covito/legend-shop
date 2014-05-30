@@ -1,0 +1,67 @@
+
+/* the overlayed element */
+div.overlay {
+	
+	/* growing background image */
+	background-image:url(../images/white.png);
+	
+	/* dimensions after the growing animation finishes  */
+	width:530px;
+	height:420px;		
+	
+	/* initially overlay is hidden */
+	display:none;
+	
+	/* some padding to layout nested elements nicely  */
+	padding:55px;
+}
+
+/* default close button positioned on upper right corner */
+div.overlay .close {
+	background-image:url(../images/close.png);
+	position:absolute;
+	right:5px;
+	top:5px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
+
+
+/* black */
+div.overlay.black {
+	background:url(../images/transparent.png) no-repeat !important;
+	color:#fff;
+}
+
+/* petrol */
+div.overlay.petrol {
+	background:url(../images/petrol.png) no-repeat !important;
+	color:#fff;
+}
+
+div.black h2, div.petrol h2 {
+	color:#ececec;		
+}
+
+
+
+        /* use a semi-transparent image for the overlay */
+        #overlay {
+            background-image:url('../images/transparent.png');
+            color:#FFF6E8;
+            height:450px;
+        }
+        
+        /* container for external content. uses vertical scrollbar, if needed */
+        div.contentWrap {
+            height:441px;
+            overflow-y:auto;
+        }
+        
+        
+        
+        
+        
+        
+        

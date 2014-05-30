@@ -1,0 +1,22 @@
+.regtitlebg {
+    position: relative;
+
+    background-color:#FFCC00;
+    border: 1px solid #FFFFFF;
+    font-size: 13px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin:0px 0 0px 0px;
+    padding: 0px;
+}
+
+.regtables {
+	position: relative;
+	margin: auto;
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	padding: 0px;
+	table-layout: fixed; 
+}

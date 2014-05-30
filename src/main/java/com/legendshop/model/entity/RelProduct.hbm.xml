@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.RelProduct" table="ls_prod_rel">
+        <id name="relId" type="java.lang.Long">
+            <column name="rel_id" />
+            <generator class="native" />
+        </id>
+        <property name="prodId" type="java.lang.Long">
+            <column name="prod_id">
+                <comment>商品ID</comment>
+            </column>
+        </property>
+        <property name="relProdId" type="java.lang.Long">
+            <column name="rel_prod_id">
+                <comment>相关产品ID</comment>
+            </column>
+        </property>
+        <property name="relProdName" type="java.lang.String">
+            <column name="rel_prod_name">
+                <comment>相关产品名称</comment>
+            </column>
+        </property>
+        <property name="recDate"  type="java.util.Date">
+            <column name="rec_date">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>商品对应的用户</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有, 并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.Ask" table="ls_ask">
+   	 	<!-- 
+	 <cache usage="read-write"/>
+	  -->
+        <id name="askId" type="java.lang.Long">
+            <column name="ask_id" />
+            <generator class="native" />
+        </id>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id">
+                <comment>提问人ID</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>提问人名称</comment>
+            </column>
+        </property>
+        <property name="prodId" type="java.lang.Long">
+            <column name="prod_id">
+                <comment>产品Id</comment>
+            </column>
+        </property>
+        <property name="shopId" type="java.lang.Long">
+            <column name="shop_id">
+                <comment>商城ID</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="type">
+                <comment>提问类型</comment>
+            </column>
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content">
+                <comment>提问内容</comment>
+            </column>
+        </property>
+        <property name="comment" type="java.lang.String">
+            <column name="comment">
+                <comment>回复内容</comment>
+            </column>
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="create_time">
+                <comment>提问时间</comment>
+            </column>
+        </property>
+        <property name="replyTime" type="java.util.Date">
+            <column name="reply_time">
+                <comment>回复时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

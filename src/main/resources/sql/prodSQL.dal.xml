@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited by Newway -->
+
+<DataAccessLayer>
+	<BusinessObjects>
+		<Object objectName="prod">
+  <!-- 排行榜 -->
+            <Method name="gethotsale"><![CDATA[
+	      	select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name) from Product prod ,Sort sort
+			where prod.sortId = sort.sortId
+			and sort.userName = ?
+			and (prod.startDate is null or prod.startDate <= ? ) 
+			and (prod.endDate is null or prod.endDate >= ? ) 
+			order by prod.buys desc
+            ]]></Method>
+             <Method name="getCommend"><![CDATA[
+	      	 select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name,prod.pic,prod.price,prod.cash,prod.proxyPrice,prod.views,prod.buys,prod.comments) from Product prod, ShopDetail sd  where prod.userName = sd.userName and prod.commend ='Y' and prod.status = 1 and prod.userName = ? and  ( prod.startDate is null or prod.startDate <= ? ) and 
+         		(prod.endDate is null or prod.endDate >= ? ) and sd.status = 1 order by  prod.buys, prod.views, prod.modifyDate desc
+            ]]></Method>
+           <Method name="getGlobalCommend"><![CDATA[
+	      	 select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name,prod.pic,prod.price,prod.cash,prod.proxyPrice,prod.views,prod.buys,prod.comments) from Product prod, ShopDetail sd  where prod.userName = sd.userName and prod.commend ='Y' and prod.status = 1  and  ( prod.startDate is null or prod.startDate <= ? ) and 
+         		(prod.endDate is null or prod.endDate >= ? ) and sd.status = 1  order by  prod.buys, prod.views, prod.modifyDate desc
+            ]]></Method>
+            <Method name="getCommendBySort"><![CDATA[
+	      	 select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name,prod.pic,prod.price,prod.cash,prod.proxyPrice,prod.views,prod.buys,prod.comments) from Product prod, ShopDetail sd  where prod.userName = sd.userName and prod.commend ='Y' and prod.status = 1 and prod.sortId = ? and prod.userName = ? and  ( prod.startDate is null or prod.startDate <= ? ) and 
+         		(prod.endDate is null or prod.endDate >= ? )  and sd.status = 1  order by prod.modifyDate desc
+            ]]></Method>
+            <Method name="getRelationProd"><![CDATA[
+	      	 select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name,prod.pic,prod.price,prod.cash,prod.proxyPrice,prod.views,prod.buys,prod.comments) from Product prod, ShopDetail sd 
+	      	 where prod.userName = sd.userName and prod.userName = ? and prod.status = 1 and  ( prod.startDate is null or prod.startDate <= ? ) and (prod.endDate is null or prod.endDate >= ? )   and sd.status = 1 
+	      	 and exists ( select n.userName from RelProduct n where prod.prodId = n.relProdId and  n.prodId = ? )
+			]]></Method>
+             <Method name="getNewestProd"><![CDATA[
+    	 		select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name, prod.pic) from Product prod, ShopDetail sd where  prod.userName = sd.userName and prod.status = 1 and prod.prodType ='P' and prod.userName = ? and ( prod.startDate is null or prod.startDate <= ? ) and 
+         		( prod.endDate is null or prod.endDate >= ? )  and sd.status = 1  order by prod.buys, prod.views, prod.modifyDate desc
+            ]]></Method>
+             <Method name="getGlobalNewestProd"><![CDATA[
+    	 		select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name, prod.pic) from Product prod, ShopDetail sd  where  prod.userName = sd.userName and prod.status = 1 and prod.prodType ='P'  and ( prod.startDate is null or prod.startDate <= ? ) and 
+         		( prod.endDate is null or prod.endDate >= ? )  and sd.status = 1 order by prod.buys, prod.views, prod.modifyDate desc
+            ]]></Method>
+            <Method name="getHotOnProd"><![CDATA[
+    	 		select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name, prod.pic) from Product prod, ShopDetail sd where  prod.userName = sd.userName and prod.userName = ? and prod.sortId = ? and prod.status = 1 and ( prod.startDate is null or prod.startDate <= ? ) and 
+         		( prod.endDate is null or prod.endDate >= ? )  and sd.status = 1 order by prod.buys,prod.comments desc
+            ]]></Method>
+            <!-- 商城热门商品 -->
+            <Method name="getHotViewProd"><![CDATA[
+    	 		select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name,prod.pic,prod.price,prod.cash,prod.proxyPrice,prod.views,prod.buys,prod.comments) from Product prod , ShopDetail sd where  prod.userName = sd.userName  and prod.status = 1  and prod.prodType ='P'  and ( prod.startDate is null or prod.startDate <= ? ) and 
+         		( prod.endDate is null or prod.endDate >= ? )  and sd.status = 1 order by prod.buys, prod.views desc
+            ]]></Method>
+            <Method name="getHotComment"><![CDATA[
+    	 		select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name,prod.pic,prod.price,prod.cash,prod.proxyPrice,prod.views,prod.buys,prod.comments) from Product prod , ShopDetail sd where  prod.userName = sd.userName and  prod.userName = ? and prod.sortId = ? and  prod.status = 1 and ( prod.startDate is null or prod.startDate <= ? ) and 
+         		( prod.endDate is null or prod.endDate >= ? )  and sd.status = 1 order by prod.comments,prod.buys desc
+            ]]></Method>
+            <Method name="getHotRecommend"><![CDATA[
+    	 		select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name,prod.pic,prod.price,prod.cash,prod.proxyPrice,prod.views,prod.buys,prod.comments) from Product prod , ShopDetail sd where prod.userName = sd.userName and  prod.hot = 'Y' and prod.userName = ? and prod.sortId = ? and  prod.status = 1 and ( prod.startDate is null or prod.startDate <= ? ) and 
+         		( prod.endDate is null or prod.endDate >= ? )   and sd.status = 1  order by prod.buys desc
+            ]]></Method>
+            <Method name="getSortProd"><![CDATA[
+					select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name,prod.pic,prod.price,prod.cash,prod.proxyPrice,prod.views,prod.buys,prod.comments)
+        			from Product prod, ShopDetail sd where  prod.userName = sd.userName and prod.sortId = ? 
+        			and prod.status = 1 and sd.status = 1
+        			and ( prod.startDate is null or prod.startDate <= ? )
+        			and (prod.endDate is null or prod.endDate >= ? )
+        			order by prod.modifyDate desc
+            ]]></Method>
+          <Method name="getGlobalSortProd"><![CDATA[
+					select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name,prod.pic,prod.price,prod.cash,prod.proxyPrice,prod.views,prod.buys,prod.comments)
+        			from Product prod, ShopDetail sd where prod.userName = sd.userName and prod.globalSort = ? 
+        			and prod.status = 1 and sd.status = 1
+        			and ( prod.startDate is null or prod.startDate <= ? )
+        			and (prod.endDate is null or prod.endDate >= ? )
+        			order by prod.buys, prod.views, prod.modifyDate desc
+            ]]></Method>
+            <Method name="getSortProdCount"><![CDATA[
+					select count(*) from Product prod, ShopDetail sd  where prod.userName = sd.userName and prod.sortId = ? 
+        			and prod.status = 1 and sd.status = 1
+        			and ( prod.startDate is null or prod.startDate <= ? )
+        			and (prod.endDate is null or prod.endDate >= ? )
+            ]]></Method>
+            <Method name="getGlobalSortProdCount"><![CDATA[
+					select count(*) from Product prod, ShopDetail sd where prod.userName = sd.userName and prod.globalSort = ? 
+        			and prod.status = 1 and sd.status = 1
+        			and ( prod.startDate is null or prod.startDate <= ? )
+        			and (prod.endDate is null or prod.endDate >= ? )
+            ]]></Method>
+           <Method name="getOrderSortProd"><![CDATA[
+					select new Product(prod.prodId, prod.sortId, prod.nsortId,prod.subNsortId,prod.name,prod.pic,prod.price,prod.cash,prod.proxyPrice,prod.views,prod.buys,prod.comments)
+        			from Product prod , ShopDetail sd where prod.userName = sd.userName  and prod.status = 1 and sd.status = 1 and prod.sortId = ? 
+        			{? and prod.nsortId = $nsortId$}
+        			{? and prod.subNsortId = $subNsortId$}
+        			 {? and prod.actualStocks > $hasProd$}
+        			and ( prod.startDate is null or prod.startDate <= ? )
+        			and (prod.endDate is null or prod.endDate >= ? )
+        			 { $orderByAndDir$ }
+            ]]></Method>
+           <Method name="getOrderSortProdCount"><![CDATA[
+					select count(*) from Product prod , ShopDetail sd  where prod.userName = sd.userName  and prod.status = 1 and sd.status = 1 and prod.sortId = ? 
+					{? and prod.nsortId = $nsortId$}
+        			{? and prod.subNsortId = $subNsortId$}
+        		     {? and prod.actualStocks > $hasProd$}
+        			and ( prod.startDate is null or prod.startDate <= ? )
+        			and (prod.endDate is null or prod.endDate >= ? )
+            ]]></Method>
+            <Method name="getProductCommentCount">
+					select count(*) from ProductComment hc,Product prod where prod.prodId = hc.prodId
+					{? and hc.ownerName = $ownerName$}
+					{? and hc.userName like $userName$}
+					{? and prod.name like $name$}
+            </Method>
+            <Method name="getProductComment">
+					select new ProductComment(hc.id, hc.prodId,hc.ownerName,hc.userName,hc.content,hc.addtime,hc.postip,hc.score,hc.replyContent,hc.replyName,hc.replyTime,prod.name )
+					from ProductComment hc,Product prod where prod.prodId = hc.prodId
+					{? and hc.ownerName = $ownerName$}
+					{? and hc.userName like $userName$}
+					{? and prod.name like $name$}
+					{! order by hc.addtime desc||$orderIndicator$}
+            </Method>
+            <Method name="getProdDetail">
+		            select prod.prod_id AS prod_id,prod.sort_id AS sort_id,prod.nsort_id AS nsort_id,prod.sub_nsort_id AS sub_nsort_id,
+					prod.name AS name,prod.price AS price,prod.cash AS cash,prod.proxy_price AS proxy_price,prod.carriage AS carriage,prod.brief AS brief,prod.content AS content,
+					prod.views AS views,prod.buys AS buys,prod.rec_date AS rec_date,prod.pic AS pic,prod.is_commend AS commend,
+					prod.status AS status,prod.modify_date AS modify_date,prod.user_id AS user_id,prod.user_name AS user_name,
+					prod.start_date AS start_date,prod.end_date AS end_date,prod.stocks AS stocks,prod.prod_type AS prod_type,prod.key_word AS key_word,
+					prod.attribute AS attribute,prod.parameter AS parameter,prod.brand_id AS brand_id,sort.sort_name AS sort_name,nsort2.nsort_name AS nsort_name,
+					nsort3.nsort_name AS sub_nsort_name,brand.brand_name AS brand_name,prod.prod_type AS prod_type, prod.model_id AS model_id
+					from ls_prod prod 
+					left join ls_sort sort on prod.sort_id = sort.sort_id
+					left join ls_nsort nsort2 on prod.nsort_id = nsort2.nsort_id
+					left join ls_nsort nsort3 on prod.sub_nsort_id = nsort3.nsort_id
+					left join ls_brand brand on prod.brand_id = brand.brand_id
+					where prod_id = ?
+            </Method>
+            <!-- for search -->
+            <Method name="getProdDetailList">
+		            select prod.prod_id AS prod_id,prod.sort_id AS sort_id,prod.nsort_id AS nsort_id,prod.sub_nsort_id AS sub_nsort_id,
+					prod.name AS name,prod.price AS price,prod.cash AS cash,prod.proxy_price AS proxy_price,prod.carriage AS carriage,prod.brief AS brief,prod.content AS content,
+					prod.views AS views,prod.buys AS buys,prod.rec_date AS rec_date,prod.pic AS pic,prod.is_commend AS commend,
+					prod.status AS status,prod.modify_date AS modify_date,prod.user_id AS user_id,prod.user_name AS user_name,
+					prod.start_date AS start_date,prod.end_date AS end_date,prod.stocks AS stocks,prod.prod_type AS prod_type,prod.key_word AS key_word,
+					prod.attribute AS attribute,prod.parameter AS parameter,prod.brand_id AS brand_id,sort.sort_name AS sort_name,nsort2.nsort_name AS nsort_name,
+					nsort3.nsort_name AS sub_nsort_name,brand.brand_name AS brand_name,prod.prod_type AS prod_type, prod.model_id AS model_id
+					from ls_prod prod
+					left join ls_sort sort on prod.sort_id = sort.sort_id
+					left join ls_nsort nsort2 on prod.nsort_id = nsort2.nsort_id
+					left join ls_nsort nsort3 on prod.sub_nsort_id = nsort3.nsort_id
+					left join ls_brand brand on prod.brand_id = brand.brand_id
+					where prod_id in (
+            </Method>
+              <!-- for back end -->
+             <Method name="getProductConsultCount">
+              <![CDATA[
+					select count(*)
+					from ls_prod p,ls_prod_cons pc where p.prod_id = pc.prod_id
+					{? and pc.point_type = $pointType$ }
+					{ $replyed$ }
+					{? and p.user_name = $userName$ }
+					{? and p.name like  $prodName$}
+					{? and pc.rec_date >=  $startTime$}
+					{? and pc.rec_date <=  $endTime$}
+			    ]]>
+            </Method>
+            <Method name="getProductConsult">
+              <![CDATA[
+					select pc.cons_id as consId,p.prod_id as prodId,p.name as prodName,p.user_name as userName, p.user_id as userId,pc.content,pc.answer,pc.rec_date as recDate,
+					pc.postip,pc.answertime,pc.ask_user_name as askUserName,pc.ans_user_name as ansUserName,pc.point_type as pointType
+					from ls_prod p,ls_prod_cons pc where p.prod_id = pc.prod_id
+					{? and pc.point_type = $pointType$ }
+					{ $replyed$ }
+					{? and p.user_name = $userName$ }
+					{? and p.name like  $prodName$}
+					{? and pc.rec_date >=  $startTime$}
+					{? and pc.rec_date <=  $endTime$}
+					order by pc.rec_date desc
+  					 ]]>
+            </Method>
+            <!-- for front end -->
+             <Method name="getProductConsultListCount">
+              <![CDATA[
+					select count(*)
+					from ls_usr_detail ud, ls_usr_grad ug, ls_prod_cons pc 
+					where ud.grade_id = ug.grade_id and pc.ask_user_name = ud.user_name 
+					{? and pc.point_type =  $pointType$}
+				    and pc.prod_id =  ?
+			    ]]>
+            </Method>
+             <Method name="getProductConsultList">
+              <![CDATA[
+					select pc.cons_id as consId,pc.content,pc.answer,pc.rec_date as recDate,
+					pc.postip,pc.answertime,pc.ask_user_name as askUserName,pc.ans_user_name as ansUserName,ug.name as gradeName 
+					from ls_usr_detail ud, ls_usr_grad ug, ls_prod_cons pc 
+					where ud.grade_id = ug.grade_id and pc.ask_user_name = ud.user_name 
+					{? and pc.point_type =  $pointType$}
+					and pc.prod_id =  ?
+					order by pc.rec_date desc
+  					 ]]>
+            </Method>
+            <Method name="queryHotSearch">
+              <![CDATA[
+					select hs.id,hs.title, hs.msg,hs.user_name as userName,hs.seq,hs.status,hs.sort, s.sort_name as sortName from ls_hsearch hs left join ls_sort s on hs.sort = s.sort_id 
+					where 1=1  {? and hs.sort = $sort$} {? and hs.title = $title$}  {? and hs.user_name = $userName$} order by hs.seq desc
+  					 ]]>
+            </Method>
+            <Method name="queryHotSearchCount">
+              <![CDATA[
+					select count(*) from ls_hsearch where 1=1  {? and sort = $sort$} {? and title = $title$} {? and user_name = $userName$} 
+  					 ]]>
+            </Method>
+		</Object>
+	</BusinessObjects>
+</DataAccessLayer>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.Myleague" table="ls_league">
+        	<!-- 
+	 <cache usage="read-write"/>
+	  -->
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id">
+                <comment>用户ID</comment>
+            </column>
+        </property>
+        <property name="friendId" type="java.lang.String">
+            <column name="friend_id">
+                <comment>好友ID</comment>
+            </column>
+        </property>
+        <property name="friendName" type="java.lang.String">
+            <column name="friend_name">
+                <comment>好友名称</comment>
+            </column>
+        </property>
+        <property name="displayOrder" type="java.lang.Integer">
+            <column name="display_order">
+                <comment>显示顺序</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>0：申请中，1：对方同意，2：对方拒绝</comment>
+            </column>
+        </property>
+        <property name="addtime" type="java.util.Date">
+            <column name="addtime">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

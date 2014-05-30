@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+/* Core Code */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { padding:0; margin:0; font-size:12px; line-height:100%; font-family:Arial, sans-serif;}
+
+/* Remember to define focus styles! */
+:focus { outline: 0;}
+body { width:100%; height:100%; text-align:center; color:black; }
+ul, ol { list-style:none;}
+
+/* Tables still need 'cellspacing="0"' in the markup. */
+table { border-collapse:separate; border-spacing:0;}
+caption, th, td { font-weight:normal;}
+
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, blockquote:after,
+q:before, q:after { content: "";}
+blockquote, q { quotes: "" "";}
+
+img { border:none;}
+a { color:#000; text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+.tabsPage .tabsPageHeader { display:block; height:27px; border-style:solid; border-width:1px 1px 0 1px; background-position:0 -450px; background-repeat:repeat-x; position:relative;}
+.tabsPage .tabsPageHeaderContent { display:block; overflow:hidden; height:27px; margin-right:19px; position:relative;}
+.tabsPage .tabsPageHeaderMargin { margin:0 34px 0 17px;}
+.tabsPage .tabsPageHeader ul { display:block; width:10000px; height:26px; z-index:1; position:absolute;}
+.tabsPage .tabsPageHeader li { float:left; display:block; height:26px; margin-left:2px; background-position:0 -100px; background-repeat:repeat-x; position:relative; cursor:pointer;}
+.tabsPage .tabsPageHeader li a { float:left; display:block; overflow:hidden; height:26px; padding-left:5px; line-height:25px; background-position:0 0; }
+.tabsPage .tabsPageHeader li a:hover { text-decoration:none;}
+.tabsPage .tabsPageHeader li span { float:left; display:block; overflow:hidden; width:92px; height:24px; padding:2px 20px 0 3px; line-height:21px; background-position:100% -50px; cursor:pointer;}
+
+.tabsPage .tabsPageHeader li.hover { background-position:0 -250px; background-repeat:repeat-x;}
+.tabsPage .tabsPageHeader li.hover a { background-position:0 -150px;}
+.tabsPage .tabsPageHeader li.hover span { background-position:100% -200px;}
+
+.tabsPage .tabsPageHeader li.selected { background-position:0 -400px; background-repeat:repeat-x;}
+.tabsPage .tabsPageHeader li.selected a { font-weight:bold; background-position:0 -300px;}
+.tabsPage .tabsPageHeader li.selected span { background-position:100% -350px;}
+
+.tabsPage .tabsPageHeader li .close { display:block; overflow:hidden; width:11px; height:11px; padding:0; text-indent:-1000px; position:absolute; top:3px; right:2px;}
+.tabsPage .tabsPageHeader li .close:hover { background-position:0 -50px;}
+
+.tabsPage .tabsPageHeader li.main span { padding:2px 8px 0 3px;}
+.tabsPage .tabsPageHeader li .home_icon,
+.tabsPage .tabsPageHeader li.main .home_icon { width:auto; padding:0 0 0 15px; background-position:0 3px;}
+
+.tabsPage .tabsMove { height:25px; position:absolute; top:0; right:0; z-index:2;}
+.tabsPage .tabsLeft, .tabsPage .tabsRight, .tabsPage .tabsMore { display:block; overflow:hidden; width:17px; height:23px; text-indent:-1000px; position:absolute; z-index:2;}
+.tabsPage .tabsLeft { background-position:0 0; top:1px; left:0; cursor:pointer;}
+.tabsPage .tabsLeftHover { background-position:0 -50px;}
+.tabsPage .tabsLeftDisabled { background-position:0 -100px; top:1px; left:0; cursor:default;}
+.tabsPage .tabsRight { background-position:0 -150px; top:1px; right:17px; cursor:pointer;}
+.tabsPage .tabsRightHover { background-position:0 -200px;}
+.tabsPage .tabsRightDisabled { background-position:0 -250px; top:1px; right:17px; cursor:default;}
+.tabsPage .tabsMore { background-position:0 -300px; top:1px; right:0; cursor:pointer;}
+.tabsPage .tabsMoreHover { background-position:0 -350px;}
+.tabsPage .tabsMoreList { display:none; overflow-x:hidden; overflow-y:auto; width:170px; max-height:380px; padding:2px; border-style:solid; border-width:1px; position:absolute; top:24px; right:0; z-index:3;}
+.tabsPage .tabsMoreList li { display:block; overflow:hidden; height:23px; line-height:21px;}
+.tabsPage .tabsMoreList li a { display:block; width:148px; height:21px; padding:0 10px; border:solid 1px #FFF; white-space:nowrap; line-height:21px;}
+.tabsPage .tabsMoreList li a:hover { border-color:#ececec; text-decoration:none; background:#f5f5f5;}
+.tabsPage .tabsMoreList li.selected a { font-weight:bold; border-color:#dfe5ed; background:#e8edf3;}
+.tabsPage .tabsPageContent { display:block; overflow:hidden; border-style:solid; border-width:0 1px 1px 1px; position:relative;}
+
+/* contentTitle */
+h2.contentTitle{margin-bottom:10px; padding:0 10px; line-height:30px; font-size:14px; border-bottom:solid 1px #CCC;}
+h3.contentTitle{margin-bottom:5px; line-height:25px; font-size:13px; border-bottom:solid 1px #CCC;clear:both;}
+
+/* ----------------------------------------------------------------- Pages */
+/* Layout */
+#layout { text-align:left;}
+body { overflow:hidden;}
+
+
+fieldset {padding:3px; margin:0 0 5px 0; border:1px dotted #B8D0D6;}
+fieldset legend {padding:2px; border:1px dotted #B8D0D6; font-weight: bold;}
+fieldset legend:hover {background-color: #dddddd;}
+

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited by Newway -->
+
+<DataAccessLayer>
+	<BusinessObjects>
+		<Object objectName="biz">
+            <!-- 登录历史统计 -->
+            <Method name="loginHistorySum">
+	            <![CDATA[
+				select user_name,count(*) coun from ls_login_hist
+				where 1=1
+					{ and user_name = '$userName$'}
+					{? and	time >= $startTime$}
+					{? and	time <= $endTime$}
+				  group by user_name
+	            ]]>
+            </Method>
+            <Method name="loginHistoryCount">
+	            <![CDATA[
+	            select count(1) from(
+				select user_name,count(*) coun from ls_login_hist
+				where 1=1
+					{ and user_name = '$userName$'}
+					{? and	time >= $startTime$}
+					{? and	time <= $endTime$}
+				  group by user_name) a
+	            ]]>
+            </Method>
+            
+            <Method name="QueryNsortCount">
+                select count(*) from Nsort as n,Sort as s where n.sortId=s.sortId and s.sortId = ? 
+                 { $isSecNsort$ }
+                {? and s.userName = $userName$}
+                {? and n.nsortName = $nsortName$}
+            </Method>
+            <Method name="QueryNsort">
+             select n from Nsort as n,Sort as s where n.sortId = s.sortId and s.sortId = ?
+                { $isSecNsort$ }
+                {? and s.userName = $userName$}
+                {? and n.nsortName = $nsortName$}
+                order by n.seq
+            </Method>
+             <Method name="QueryNewsCount">
+                select count(*) from News n left join n.sort s left join n.newsCategory c where 1=1 
+                {? and n.userName = $userName$}
+                {? and c.newsCategoryId = $newsCategoryId$}
+                {? and s.sortId = $sortId$}
+                {? and n.newsTitle like $newsTitle$}
+                {? and n.status = $status$}
+                {? and n.position = $position$}
+            </Method>
+            <Method name="QueryNews">
+               select new News(n.newsId, c.newsCategoryId,
+			c.newsCategoryName, s.sortId, s.sortName,
+			n.newsTitle, n.newsContent, n.newsDate,
+			n.status, n.position, n.userId, n.userName,n.highLine) from News n left join n.sort s left join n.newsCategory c where 1=1 
+                {? and n.userName = $userName$}
+                {? and c.newsCategoryId = $newsCategoryId$}
+                {? and s.sortId = $sortId$}
+                {? and n.newsTitle like $newsTitle$}
+                {? and n.status = $status$}
+                {? and n.position = $position$}
+                {! order by n.newsDate desc||$orderIndicator$}
+            </Method>
+            <Method name="QueryTagCount">
+               select count(*) from Tag t, Sort s, NewsCategory c where  t.newsCategoryId = c.newsCategoryId and t.sortId = s.sortId
+                {? and t.name like $name$}
+                {? and t.status = $status$}
+                {? and s.userName = $userName$}
+            </Method>
+            <Method name="QueryTag">
+               select new Tag(t.tagId, t.name, s.sortName,  c.newsCategoryName, t.type, t.status, t.createTime, t.userId,  t.userName) from Tag t, Sort s, NewsCategory c where  t.newsCategoryId = c.newsCategoryId and t.sortId = s.sortId
+                {? and t.name like $name$}
+                {? and t.status = $status$}
+                {? and s.userName = $userName$}
+                {! order by t.createTime desc||$orderIndicator$}
+            </Method>
+             <Method name="QueryUserDetailCount">
+	                select count(*) from
+                    (select ud.user_id, ud.user_name, ud.nick_name, ud.user_mail, ud.user_regip, ud.modify_time, 
+                    ud.user_regtime,s.shop_id from ls_usr_detail ud left join ls_shop_detail s on ud.user_id = s.user_id  where 1=1 
+                    {? and ud.user_name like $userName$}
+					{? and ud.user_mail like $userMail$}
+                    ) u,ls_user s where u.user_id = s.id 				
+                    {? and s.enabled = $enabled$}
+                    { $haveShop$ }
+            </Method>
+            <Method name="QueryUserDetail">
+	                select  u.user_id, u.user_name, u.nick_name, u.user_mail, u.user_regip, u.modify_time, u.user_regtime,s.enabled, u.shop_id from
+                    (select ud.user_id, ud.user_name, ud.nick_name, ud.user_mail, ud.user_regip, ud.modify_time, 
+                    ud.user_regtime,s.shop_id from ls_usr_detail ud left join ls_shop_detail s on ud.user_id = s.user_id  where 1=1 
+                    {? and ud.user_name like $userName$}
+					{? and ud.user_mail like $userMail$}
+                    ) u,ls_user s where u.user_id = s.id 				
+                    {? and s.enabled = $enabled$}
+                    { $haveShop$ }                  
+                    {! order by u.user_regtime desc||$orderIndicator$}
+            </Method>
+            <Method name="QueryLeagueCount">
+		            select count(*) from ls_league m,ls_shop_detail sd where sd.user_name = m.friend_id and sd.status = 1
+		            {? and m.user_id = $shopName$}
+            </Method>
+            <Method name="QueryLeague">
+					select m.friend_id as friendId,m.friend_name as friendName,s.logo_pic as banner, s.province,s.city,s.area,s.credit,s.gradeId
+					from ls_league m,
+					(select sd.user_name,p.province,c.city,a.area,sd.logo_pic,sd.credit,sd.grade_id as gradeId
+					from ls_shop_detail sd 
+					left join ls_provinces p on sd.provinceid = p.id
+					left join ls_cities c on sd.cityid = c.id 
+					left join ls_areas a on sd.areaid = a.id
+					where sd.status = 1) s
+					where  s.user_name = m.friend_id 
+				    {? and m.user_id = $shopName$}
+					order by s.gradeId, s.credit, m.display_order desc
+            </Method>
+             <Method name="QueryAllLeagueCount">
+		            select count(*) from ls_shop_detail where status = 1
+            </Method>
+            <Method name="QueryAllLeague">
+					select sd.user_name as friendId,sd.site_name as friendName,sd.logo_pic as banner,  p.province,c.city,a.area,sd.credit,sd.grade_id as gradeId
+					from ls_shop_detail sd 
+					left join ls_provinces p on sd.provinceid = p.provinceid
+					left join ls_cities c on sd.cityid = c.cityid 
+					left join ls_areas a on sd.areaid = a.areaid
+					where sd.status = 1
+                	order by sd.grade_id desc, sd.credit desc
+            </Method>
+              <Method name="getShopDetailViewCore">
+                   	select sd.shop_id AS shopId,sd.user_id AS userId,sd.user_name AS userName,sd.site_name AS siteName,sd.shop_addr AS shopAddr,sd.bank_card AS bankCard,sd.payee AS payee,
+					sd.code AS code,sd.post_addr AS postAddr,sd.recipient AS recipient,sd.status AS status,sd.visit_times AS visitTimes,
+					sd.product_num AS productNum,sd.comm_num AS commNum,sd.off_product_num AS offProductNum,sd.modify_date AS modifyDate,
+					sd.rec_date AS recDate, sd.brief_desc AS briefDesc,sd.detail_desc AS detailDesc,sd.shop_pic AS shopPic,
+					sd.grade_id AS gradeId,sd.type AS type,sd.id_card_pic AS idCardPic,sd.traffic_pic AS trafficPic,
+					sd.id_card_num AS idCardNum,sd.create_country_code AS createCountryCode,sd.create_area_code AS createAreaCode,
+					sd.provinceid AS provinceid,sd.cityid AS cityid,sd.areaid AS areaid,p.province AS province,c.city AS city,a.area AS area,
+					u.user_tel AS userTel,u.nick_name AS nickName,u.user_mobile AS userMobile,u.qq AS qq,u.msn AS msnNumber,u.user_postcode AS userPostcode,u.fax AS fax,sd.fe_templet as frontEndTemplet,
+					sd.be_templet as backEndTemplet, sd.fe_lang as frontEndLanguage, sd.be_lang as backEndLanguage,
+					sd.fe_style as frontEndStyle,sd.be_style as backEndStyle,sd.domain_name as domainName, sd.icp_info as icpInfo,sd.logo_pic as logoPic
+					from ls_shop_detail sd left join ls_usr_detail u on sd.user_id = u.user_id
+					left join ls_provinces p on sd.provinceid = p.id
+					left join ls_cities c on sd.cityid = c.id
+					left join ls_areas a on sd.areaid = a.id 
+              </Method>
+            <Method name="getShopDetailView">
+                    #biz.getShopDetailViewCore#
+					where sd.user_name = ?
+            </Method>
+             <Method name="getShopDetailViewList">
+                    #biz.getShopDetailViewCore#
+					where sd.status = 1 and sd.shop_id in (
+            </Method>  
+            <Method name="QueryLogo">
+            		select new ShopDetail(sd.logoPic,sd.briefDesc,sd.userId,sd.userName) from ShopDetail sd where sd.logoPic is not null
+            		{? and sd.userName = $userName$}
+            </Method>
+            <Method name="QueryLogoCount">
+                    select count(*) from ShopDetail sd  where sd.logoPic is not null 
+            		{?and sd.userName = $userName$}
+            </Method>
+            <Method name="QueryDynamicTemp">
+            		select new DynamicTemp(dt.id, dt.name, dt.content, dt.type, dt.userName, dt.sortId, dt.status,s.sortName) from DynamicTemp dt, Sort s where dt.sortId = s.sortId
+            		{? and dt.name = $name$}
+            		{? and dt.status = $status$}
+            		{? and dt.sortId = $sortId$}
+            		{? and dt.type = $type$}
+            		{? and dt.userName = $userName$}
+            </Method>
+            <Method name="QueryDynamicTempCount">
+            		select count(*) from DynamicTemp dt, Sort s where dt.sortId = s.sortId
+            		{? and dt.name = $name$}
+            		{? and dt.status = $status$}
+            		{? and dt.sortId = $sortId$}
+            		{? and dt.type = $type$}
+            		{? and dt.userName = $userName$}
+            </Method>
+             <Method name="QueryBrandInSort">
+				select  distinct ns.sort_id as sortId, nb.brand_id as brandId ,b.brand_name as brandName  from  ls_nsort ns,ls_brand b,ls_ns_brand nb
+				where nb.nsort_id = ns.nsort_id 
+				and nb.brand_id = b.brand_id
+				and ns.sort_id = ?
+            </Method>
+             <Method name="queryOrderList">
+				select s.sub_id as subId,s.user_name as userName, s.order_name as orderName,s.sub_date as subDate,s.sub_number as subNumber,
+				s.sub_check as subCheck,s.sub_type as subType,s.actual_total as subTotal, s.pay_id as payId,s.pay_type_id as payTypeId,s.status,s.pay_type_name as payTypeName,
+				s.shop_name as shopName, b.cash, b.carriage, b.prod_id as prodId,b.pic,b.basket_count as basketCount, b.prod_name as prodName,b.basket_id as basketId,b.attribute
+				 from ls_sub s left join ls_basket b on s.sub_number = b.sub_number where 1=1
+				 {? and s.sub_check = $subCheck$ }
+				 {? and s.status = $status$ }
+				 {? and s.sub_number like $subNumber$ }
+				 {? and s.user_name = $userName$ }
+				 order by s.sub_date desc
+            </Method>            
+             <Method name="queryCountOrderList">
+				select count(*) from ls_sub s left join ls_basket b on s.sub_number = b.sub_number where 1=1
+				 {? and s.sub_check = $subCheck$ }
+				 {? and s.status = $status$ }
+				 {? and s.sub_number like $subNumber$ }
+				 {? and s.user_name = $userName$ }
+            </Method>                  
+		</Object>
+		<Object objectName="ad">
+		     <Method name="getAdvertisement">
+					from Advertisement where enabled = '1' and userName = ? and type like ?
+            </Method>
+           <Method name="getAdvertisementByType">
+					from Advertisement where enabled = '1' and userName = ? and type = ?
+            </Method>
+ 		     <Method name="getAdvertisementCount">
+					 select count(*) from Advertisement where userName = ? and type = ?
+            </Method>           
+           
+		</Object>
+		<Object objectName="login">
+ 		     <Method name="updateUserDetail">
+					update ls_usr_detail set user_lastip = ? , user_lasttime = ? where user_name = ?
+            </Method>
+		</Object>
+	</BusinessObjects>
+</DataAccessLayer>

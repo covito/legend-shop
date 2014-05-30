@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.ConstTable" table="ls_cst_table">
+        <composite-id name="id" class="com.legendshop.model.entity.ConstTableId">
+            <key-property name="key" type="java.lang.String">
+                <column name="key_value" />
+            </key-property>
+            <key-property name="type" type="java.lang.String">
+                <column name="type" />
+            </key-property>
+        </composite-id>
+        <property name="value" type="java.lang.String">
+            <column name="value" />
+        </property>
+       <property name="seq" type="java.lang.Integer">
+            <column name="seq"/>
+        </property>
+    </class>
+</hibernate-mapping>

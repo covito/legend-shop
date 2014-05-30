@@ -1,0 +1,42 @@
+body {text-align:left;font:normal 12px/1.6em simsun}
+a {text-decoration:none;color:#353535;}
+a:hover {color:#CD0102;}
+img {border:0;}
+
+a:visited {  text-decoration: none }
+a:hover {  text-decoration: none }
+a:active { text-decoration: none }
+a:link { text-decoration: none }
+td {  font-size: 10pt;}
+.afterOperate { font-weight: bold;font-size: 1.2em;color: #666666 }
+
+.cursor_pointer {cursor: pointer; }
+
+/* 
+ flashNews 530px:长度
+ flashNews, .firstNews 290px：宽度
+ flashNews h3  left:40px; top:200px 文字说明1 左边距 高度
+ .flashNews p left:100px;top:240px; 文字说明2 左边距 高度
+ 
+*/	
+.flashNews {position:relative;width:530px;margin-bottom:0px;overflow:hidden;border:1px solid #CCCCCC;text-align:left}
+.firstNews {position:relative;float:right;width:744px;margin-bottom:0px;overflow:hidden;border:1px solid #B6CAE3;}
+.flashNews, .firstNews {height:290px;}
+.flashNews .bg {position:absolute;left:0;bottom:0;width:530px;height:80px;background:#000000;filter:alpha(opacity=39);opacity:0.39;}
+.flashNews h3 {position:absolute;left:25px;top:220px;width:530px;height:20px;line-height:20px;z-index:2;}
+.flashNews h3 a {font-size:16px;font-family:"黑体";font-weight:normal;color:#FFFFFF;}
+.flashNews h3 a:hover {color:#F20000;}
+/* 小标题 */
+.flashNews p {position:absolute;left:80px;top:250px;width:530px;height:15px;line-height:15px;;z-index:3;}
+.flashNews p a {color:#FFFFFF;}
+.flashNews p a:hover {color:#F20000;}
+.flashNews ul {position:absolute;right:0;bottom:0;padding-left:47px;z-index:2;}
+.flashNews ul li {float:left;width:15px;height:18px;line-height:18px;text-align:center;margin-left:1px;background:#000000;}
+.flashNews ul li a {display:block;width:15px;height:18px;font-size:10px;font-family:Tahoma;font-weight:bold;color:#FFFFFF;}
+.flashNews ul li a:hover, .flashNews ul li a.sel {color:#F20000;}
+.firstNews h3 {width:530px;height:27px;line-height:27px;text-indent:14px;font-size:5px;border:1px solid #FFFFFF;background:#F2F6FB;}
+.firstNews p {position:absolute;top:5px;right:5px;}
+.firstNews p a {font-size:12px;}
+.firstNews h4 {width:530px;height:25px;margin:0 auto;overflow:hidden;padding-top:5px;line-height:25px;font-weight:normal;font-size:18px;font-family:"黑体";}
+.firstNews ul {width:530px;height:auto;overflow:hidden;_zoom:1;margin:0 0 0 12px;}
+.firstNews ul li {position:relative;width:410px;height:22px;line-height:22px;overflow:hidden;text-indent:10px;font-size:14px;}

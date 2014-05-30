@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.ExternalLink" table="ls_extl_link">
+        	<!-- 
+	 <cache usage="read-write"/>
+	  -->
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="url" type="java.lang.String">
+            <column name="url">
+                <comment>url</comment>
+            </column>
+        </property>
+        <property name="wordlink" type="java.lang.String">
+            <column name="wordlink">
+                <comment>关键字</comment>
+            </column>
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content">
+                <comment>内容</comment>
+            </column>
+        </property>
+        <property name="bs" type="java.lang.Integer">
+            <column name="bs">
+                <comment>顺序</comment>
+            </column>
+        </property>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id">
+                <comment>用户主键</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>所属用户名</comment>
+            </column>
+        </property>
+        <property name="picture" type="java.lang.String">
+            <column name="picture">
+                <comment>链接广告图片</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+.pagerUnselected{
+	margin: 0 2px; 
+	padding: 0 5px;
+	color:black;
+	border: 1px solid #CCCCCC;
+	font-size: 10pt;
+	}
+.pagerDirectionLeft{
+	margin: 0 2px; 
+	padding: 0 5px;
+	color:black;
+	border: 1px solid #CCCCCC;
+	font-size: 10pt;
+	}
+.pagerDirectionRight{
+	margin: 0 2px ; 
+	padding: 0 5px;
+	color:black;
+	border: 1px solid #CCCCCC;
+	font-size: 10pt;
+	}	
+
+.pagerSelected {
+	font-weight: bold; 
+	margin: 0 2px; 
+	padding: 0 5px;
+	color:white;
+	background-color:#FF9900;
+	border: 1px solid #FF9900;
+	font-size: 10pt;
+	}

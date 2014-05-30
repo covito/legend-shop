@@ -1,0 +1,10 @@
+#prodAttributes ul{list-style-type:none;margin:0;padding:0;}
+#prodAttributes ul li{float:left;display:inline;margin-right:5px;width:auto;overflow:hidden;}
+#prodAttributes ul li a{display:block;border:1px solid #CCCCCC;padding:1px 2px 1px 2px;margin:1px;}
+#prodAttributes ul li a:hover{border:2px solid #BD1205;margin:0px;}
+#prodAttributes .select{}
+#prodAttributes .select a{
+  border:2px solid #BD1205;
+  margin:0px;
+ background:url(../images/productselected.gif) no-repeat right bottom;
+ }

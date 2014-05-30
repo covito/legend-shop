@@ -1,0 +1,119 @@
+/* alternative styles */
+table.its thead tr td{
+	background: buttonface;
+	border-width: 1px;
+	border-style: solid;
+	border-color: threedhighlight threedshadow threedshadow threedhighlight;
+	height: 20px;
+}
+
+table.its  tr td{
+    padding: 3px 3px ;
+    height: 20px;
+}
+
+
+table.its {
+	color: #666666;
+	border: 0px;
+	margin: 0px;
+}
+
+table.its th {
+	background: buttonface;
+	border-width: 1px;
+	border-style: solid;
+	border-color: threedhighlight threedshadow threedshadow threedhighlight;
+	cursor: pointer;
+	height: 20px;
+}
+
+/**  **/
+
+table.its a {color: #666666;}
+
+table.its tr.even {
+	background-color: #ECF4EF;
+}
+
+
+table.its idcol {
+	background: buttonface;
+}
+
+table.mars thead tr {
+	background-color: #9c9;
+}
+
+table.mars tr.even {
+	background-color: #ccb;
+}
+
+table.mars tr.odd {
+	background-color: #eec;
+}
+
+table.simple thead tr th {
+	background-color: #eee;
+}
+
+table.simple tr.even {
+	background-color: #fff;
+}
+
+table.simple {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+
+table.simple td,table.simple th {
+	border: 1px solid #ccc;
+}
+
+table.nocol tbody td,table.nocol tbody th {
+	border-left: none;
+	border-right: none;
+}
+
+table.report td,table.report th {
+	font: menu;
+}
+
+table.report th {
+	background: buttonface;
+	border-width: 1px;
+	border-style: solid;
+	border-color: threedhighlight threedshadow threedshadow threedhighlight;
+	cursor: pointer;
+}
+
+table.report idcol {
+	background: buttonface;
+}
+
+table.report tr.even {
+	background-color: #399;
+}
+
+table.report tbody {
+	overflow: auto;
+}
+
+table.report {
+	border: 0px;
+	margin: 0px;
+}
+
+table.report tbody tr {
+	height: 10px;
+	padding: 3px 3px ;
+}
+
+table.mark td.tableCellError {
+	background-color: #d00;
+	color: #fff;
+}
+
+table.simple td.textRed {
+	color: #b11;
+}

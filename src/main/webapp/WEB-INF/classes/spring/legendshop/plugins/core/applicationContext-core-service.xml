@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd">
+
+	<bean id="loginChecker" class="com.legendshop.core.helper.LoginChecker" />
+
+	<bean id="shopStatusChecker" class="com.legendshop.core.helper.ShopStatusChecker">
+		<property name="localeResolver" ref="localeResolver"></property>
+	</bean>
+
+	<bean id="functionChecker" class="com.legendshop.core.helper.FunctionChecker" />
+
+	<bean id="stateChecker" class="com.legendshop.core.helper.StateChecker" />
+
+	<bean class="com.legendshop.event.EventListenerImpl">
+		<property name="eventId" value="FIRE_EVENT" />
+		<property name="processors">
+			<list>
+				<ref bean="userEventProcessor"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userEventProcessor" class="com.legendshop.core.event.impl.UserEventProcessor" parent="threadProcessor" scope="prototype">
+		<property name="eventService" ref="eventService" />
+		<property name="logEvent" value="true" />
+	</bean>
+	
+	<!-- <bean class="com.legendshop.event.EventListenerImpl">
+		<property name="eventId" value="SYS_INIT" />
+		<property name="processors">
+			<list>
+				<bean class="com.legendshop.core.event.impl.SysInitProcessor">
+					<property name="startupService" ref="startupService" />
+				</bean>
+			</list>
+		</property>
+		<property name="order" value="10"></property>
+	</bean> -->
+
+	<bean class="com.legendshop.event.EventListenerImpl">
+		<property name="eventId" value="SYS_DESTORY" />
+		<property name="processors">
+			<list>
+				<bean class="com.legendshop.core.event.impl.SysDestoryProcessor">
+					<property name="startupService" ref="startupService" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+</beans>
+   

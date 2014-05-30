@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.Indexjpg" table="ls_index_jpg">
+        	<!-- 
+	 <cache usage="read-write"/>
+	  -->
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="href" type="java.lang.String">
+            <column name="href">
+                <comment>连接地址</comment>
+            </column>
+        </property>
+        <property name="img" type="java.lang.String">
+            <column name="img">
+                <comment>图片</comment>
+            </column>
+        </property>
+        <property name="alt" type="java.lang.String">
+            <column name="alt">
+                <comment>说明文字</comment>
+            </column>
+        </property>
+        <property name="title" type="java.lang.String">
+            <column name="title">
+                <comment>标题</comment>
+            </column>
+        </property>
+        <property name="stitle" type="java.lang.String">
+            <column name="stitle">
+                <comment>小标题</comment>
+            </column>
+        </property>
+        <property name="link" type="java.lang.String">
+            <column name="link">
+                <comment>连接图片</comment>
+            </column>
+        </property>
+        <property name="titleLink" type="java.lang.String">
+            <column name="titleLink">
+                <comment>文字连接图片</comment>
+            </column>
+        </property>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id">
+                <comment>用户ID</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>用户名称</comment>
+            </column>
+        </property>
+        <property name="status" column="status" type="java.lang.Integer" />
+        <property name="seq" column="seq" type="java.lang.Integer" />
+        <property name="uploadTime" column="upload_time" type="java.util.Date" />
+    </class>
+</hibernate-mapping>

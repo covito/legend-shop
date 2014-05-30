@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+	@LegendShop 商城系统. Create in 2012-04-21 16:09:41
+-->
+<hibernate-mapping>
+	<class name="com.legendshop.model.entity.GroupProduct" table="ls_group_prod">
+
+	<id name="prodId" column="prod_id" type="java.lang.Long">
+     <generator class="assigned" />
+	</id>
+	<property name="partnerId" column="partner_id" type="java.lang.Long" />
+	<property name="successCause" column="success_cause" type="java.lang.String" />
+	<property name="buyCondition" column="buy_condition" type="java.lang.String" />
+	<property name="visualBuys" column="visual_buys" type="java.lang.Integer" />
+	<property name="maxBuys" column="max_buys" type="java.lang.Integer" />
+	<property name="dvyTypeId" column="dvy_type_id" type="java.lang.Long" />
+	<property name="maxMoney" column="max_money" type="java.lang.Double" />
+	<property name="couponStartTime" column="coupon_start_time" type="java.util.Date" />
+	<property name="couponEndTime" column="coupon_end_time" type="java.util.Date" />
+	<property name="soldOut" column="sold_out" type="java.lang.Boolean" />
+	<property name="salesMin" column="sales_min" type="java.lang.Integer" />
+	<property name="salesNum" column="sales_num" type="java.lang.Integer" />
+	<property name="salesMax" column="sales_max" type="java.lang.Integer" />
+	<property name="isPost" column="is_post" type="java.lang.Boolean" />
+
+
+	</class>
+</hibernate-mapping>
+

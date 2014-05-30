@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.SystemParameter" table="ls_sys_param">
+        <id name="name" type="java.lang.String">
+            <column name="name" />
+            <generator class="assigned" />
+        </id>
+        <property name="value" type="java.lang.String">
+            <column name="value">
+                <comment>系统配置值</comment>
+            </column>
+        </property>
+        <property name="memo" type="java.lang.String">
+            <column name="memo">
+                <comment>配置说明</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="type">
+                <comment>对应JAVA类型</comment>
+            </column>
+        </property>
+        <property name="optional" type="java.lang.String">
+            <column name="optional">
+                <comment>如果不填写的默认值</comment>
+            </column>
+        </property>
+        <property name="changeOnline" type="java.lang.String">
+            <column name="change_online">
+                <comment>是否可以线上修改</comment>
+            </column>
+        </property>
+        <property name="displayOrder" type="java.lang.Integer">
+            <column name="display_order">
+                <comment>显示顺序</comment>
+            </column>
+        </property>
+         <property name="groupId" type="java.lang.String">
+            <column name="group_id">
+                <comment>分类</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

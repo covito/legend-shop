@@ -1,0 +1,68 @@
+@import "style_base.css";
+.headerbg {
+    float: left;
+    position: relative;
+    background: url(../../common/style/yellow/background.png) repeat-x;
+    font-size: 13px;
+    padding: 0px;
+    color: #666666;
+    margin:0px 0 0px 0px;
+}
+.titlebg {
+    background: url(../../common/style/yellow/background.png) repeat-x;
+    border:1px solid #FFFFFF;
+    font-size: 13px;
+    color: #666666;
+    font-weight: bold;
+    margin:0px 0 0px 0px;
+    padding: 0px;
+    height: 27px;
+}
+.titlebgnormal{
+    background: url(../../common/style/yellow/background.png) repeat-x;
+    border:1px solid #FFFFFF;
+    font-size: 13px;
+    color: #666666;
+    margin:0px 0 0px 0px;
+    padding: 0px;
+    height: 27px;
+}
+.recommond {
+    position: relative;
+    background: url(../../common/style/yellow/background.png) repeat-x;
+    border: 1px solid #FFFFFF;
+    font-size: 16px;
+    color: #666666;
+    font-weight:bold;
+    margin:0px 0px 0px 0px;
+    padding: 8px;
+}
+
+
+.pagerbg {
+    float: right;
+    position: relative;
+    background: url(../../common/style/yellow/background.png) repeat-x;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    padding: 0px;
+    color: #666666;
+    margin:0px 0 0px 0px;
+}
+
+#pic:hover {
+    position: relative;
+    margin: 2px;
+    border: 2px solid #FFC809;
+    text-align: center;
+    padding: 2px;
+}
+
+#prodvisited:hover {
+    position: relative;
+    margin: 2px;
+    border: 2px solid #FFC809;
+    text-align: center;
+    padding: 2px;
+}
+

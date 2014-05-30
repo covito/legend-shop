@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.ProductComment" table="ls_prod_comm">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="prodId" type="java.lang.Long">
+            <column name="prod_id">
+                <comment>商品ID</comment>
+            </column>
+        </property>
+        <property name="ownerName" type="java.lang.String">
+            <column name="owner_Name">
+                <comment>商品所有人ID</comment>
+            </column>
+        </property>
+        <property name="title" type="java.lang.String">
+            <column name="title">
+                <comment>标题</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>点评人ID</comment>
+            </column>
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content">
+                <comment>点评内容</comment>
+            </column>
+        </property>
+        <property name="addtime" type="java.util.Date">
+            <column name="addtime">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+        <property name="postip" type="java.lang.String">
+            <column name="postip">
+                <comment>IP来源</comment>
+            </column>
+        </property>
+        <property name="score" type="java.lang.Integer">
+            <column name="score">
+                <comment>得分，0-5分</comment>
+            </column>
+        </property>
+        <property name="replyContent" type="java.lang.String">
+            <column name="reply_content">
+                <comment>回复内容</comment>
+            </column>
+        </property>
+        <property name="replyName" type="java.lang.String">
+            <column name="reply_name">
+                <comment>回复人</comment>
+            </column>
+        </property>
+        <property name="replyTime" type="java.util.Date">
+            <column name="reply_time">
+                <comment>回复时间</comment>
+            </column>
+        </property>
+       <property name="advtge" type="java.lang.String">
+            <column name="advtge">
+                <comment>优点</comment>
+            </column>
+        </property>
+        <property name="defect" type="java.lang.String">
+            <column name="defect">
+                <comment>缺点</comment>
+            </column>
+        </property>
+       <property name="buyTime" type="java.util.Date">
+            <column name="buy_time">
+                <comment>购买时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

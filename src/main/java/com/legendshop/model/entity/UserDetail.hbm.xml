@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.UserDetail" table="ls_usr_detail">
+        <id name="userId" type="java.lang.String">
+            <column name="user_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="gradeId" type="java.lang.Integer">
+            <column name="grade_id">
+                <comment>等级ID</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>用户名称</comment>
+            </column>
+        </property>
+        <property name="nickName" type="java.lang.String">
+            <column name="nick_name">
+                <comment>昵称</comment>
+            </column>
+        </property>
+         <property name="realName" type="java.lang.String">
+            <column name="real_name">
+                <comment>真实姓名</comment>
+            </column>
+        </property>
+        <property name="userMail" type="java.lang.String">
+            <column name="user_mail">
+                <comment>用户邮件</comment>
+            </column>
+        </property>
+        <property name="userAdds" type="java.lang.String">
+            <column name="user_adds">
+                <comment>用户地址</comment>
+            </column>
+        </property>
+        <property name="userTel" type="java.lang.String">
+            <column name="user_tel">
+                <comment>电话，座机</comment>
+            </column>
+        </property>
+        <property name="userMobile" type="java.lang.String">
+            <column name="user_mobile">
+                <comment>手机</comment>
+            </column>
+        </property>
+        <property name="userPostcode" type="java.lang.String">
+            <column name="user_postcode">
+                <comment>用户邮编</comment>
+            </column>
+        </property>
+        <property name="msn" type="java.lang.String">
+            <column name="msn">
+                <comment>msn帐号</comment>
+            </column>
+        </property>
+        <property name="qq" type="java.lang.String">
+            <column name="qq">
+                <comment>qq号码</comment>
+            </column>
+        </property>
+        <property name="fax" type="java.lang.String">
+            <column name="fax">
+                <comment>传真</comment>
+            </column>
+        </property>
+        <property name="modifyTime" type="java.util.Date">
+            <column name="modify_time">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+        <property name="userRegtime" type="java.util.Date">
+            <column name="user_regtime">
+                <comment>注册时间</comment>
+            </column>
+        </property>
+        <property name="userRegip" type="java.lang.String">
+            <column name="user_regip">
+                <comment>注册IP</comment>
+            </column>
+        </property>
+        <property name="userLasttime" type="java.util.Date">
+            <column name="user_lasttime">
+                <comment>最后登录时间</comment>
+            </column>
+        </property>
+        <property name="userLastip" type="java.lang.String">
+            <column name="user_lastip">
+                <comment>最后登录IP</comment>
+            </column>
+        </property>
+        <property name="userMemo" type="java.lang.String">
+            <column name="user_memo">
+                <comment>备注</comment>
+            </column>
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="sex">
+                <comment>性别</comment>
+            </column>
+        </property>
+        <property name="birthDate" type="java.lang.String">
+            <column name="birth_date">
+                <comment>生日</comment>
+            </column>
+        </property>
+        <property name="registerCode" type="java.lang.String">
+            <column name="register_code">
+                <comment>注册时生成的注册码</comment>
+            </column>
+        </property>
+        <property name="score" type="java.lang.Long">
+            <column name="score">
+                <comment>用户积分</comment>
+            </column>
+        </property>  
+        <property name="totalCash" type="java.lang.Double">
+            <column name="total_cash">
+                <comment>总钱数</comment>
+            </column>
+        </property>
+         <property name="totalConsume" type="java.lang.Double">
+            <column name="total_consume">
+                <comment>总消耗钱数</comment>
+            </column>
+        </property>  
+        <property name="defaultAddrId" type="java.lang.Long">
+            <column name="addr_id">
+                <comment>用户积分</comment>
+            </column>
+        </property>       
+        <property name="provinceid" type="java.lang.Integer">
+            <column name="provinceid">
+                <comment>省份</comment>
+            </column>
+        </property>
+        <property name="cityid" type="java.lang.Integer">
+            <column name="cityid">
+                <comment>城市</comment>
+            </column>
+        </property> 
+        <property name="areaid" type="java.lang.Integer">
+            <column name="areaid">
+                <comment>地区</comment>
+            </column>
+        </property>  
+        <property name="idCard" type="java.lang.String">
+            <column name="id_card">
+                <comment>身份证号码</comment>
+            </column>
+        </property>              
+    </class>
+</hibernate-mapping>

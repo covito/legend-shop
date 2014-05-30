@@ -1,0 +1,87 @@
+.tables {
+	position: relative;
+	margin: auto;
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	padding: 0px;
+	table-layout: fixed; 
+	border-spacing:   0px; 
+}
+
+.tablesnoborder {
+	position: relative;
+	margin: auto;
+	overflow: hidden;
+	text-align: center;
+	padding: 0px;
+	table-layout: fixed;
+	border-spacing:   0px; 
+	padd:expression(this.cellPadding=0);  
+	width: 100%
+}
+
+.picstyle {
+	position: relative;
+	margin: auto;
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	padding: 0px;
+	table-layout: fixed; 
+	border-spacing:   0px; 
+	padd:expression(this.cellPadding=0); 
+}
+
+.topnewsfixed {
+margin-left: 2px;
+margin-right: 5px;
+table-layout: fixed;
+overflow: hidden;
+height: 21px;
+padding-right: 5px;
+}
+
+.bodybg {
+	background-color: #ECECEC;
+}
+
+.selected {
+	margin: 0px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.banner {
+	position: relative;;
+	margin: auto;
+	border: 1px solid #ccc;
+	text-align: center;
+	padding: 2px;
+}
+
+#pic {
+	position: relative;
+	margin: 3px;
+	border: 1px solid #fff;
+	text-align: center;
+	padding: 2px;
+}
+
+
+#prodvisited {
+	position: relative;
+	margin: 3px;
+	border: 1px solid #fff;
+	text-align: center;
+	padding: 2px;
+}
+
+
+#master {
+	width: 100%;
+	background: url('../../common/style/master_bg.gif') repeat-x ;
+	z-index: 10;
+}
+
+

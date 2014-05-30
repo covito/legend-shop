@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 
+ * 
+ * LegendShop 多用户商城系统
+ * 
+ *  版权所有,并保留所有权利。
+ * 
+  -->
+<hibernate-mapping>
+	<class name="com.legendshop.model.entity.SensitiveWord" table="ls_sens_word">
+		<id name="sensId" column="sens_id" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+    	
+    		<property name="sortId" column="sort_id" type="java.lang.Long" />
+    	
+    		<property name="nsortId" column="nsort_id" type="java.lang.Long" />
+    	
+    		<property name="subNsortId" column="sub_nsort_id" type="java.lang.Long" />
+    	
+    		<property name="words" column="words" type="java.lang.String" />
+    	
+    		<property name="isGlobal" column="is_global" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>

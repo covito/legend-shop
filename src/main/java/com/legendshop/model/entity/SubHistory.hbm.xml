@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011，并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.SubHistory" table="ls_sub_hist">
+        <id name="subHistId" type="java.lang.Long">
+            <column name="sub_hist_id" />
+            <generator class="native"></generator>
+        </id>
+        <property name="subId" type="java.lang.Long">
+            <column name="sub_id">
+                <comment>订购ID</comment>
+            </column>
+        </property>
+        <property name="prodName" type="java.lang.String">
+            <column name="prod_name" />
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>订购用户名称</comment>
+            </column>
+        </property>
+        <property name="orderName" type="java.lang.String">
+            <column name="order_name">
+                <comment>表单中填写的接收人</comment>
+            </column>
+        </property>
+        <property name="subDate" type="java.util.Date">
+            <column name="sub_date">
+                <comment>订购时间</comment>
+            </column>
+        </property>
+        <property name="payDate" type="java.util.Date">
+            <column name="pay_date" />
+        </property>
+        <property name="updateDate" type="java.util.Date">
+            <column name="update_date">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+        <property name="subNumber" type="java.lang.String">
+            <column name="sub_number">
+                <comment>订购流水号</comment>
+            </column>
+        </property>
+        <property name="subType" type="java.lang.String">
+            <column name="sub_type">
+                <comment>订单类型</comment>
+            </column>
+        </property>
+        <property name="subCheck" type="java.lang.String">
+            <column name="sub_check">
+                <comment>订购审批状态，Y：审批通过，N：还没有审批</comment>
+            </column>
+        </property>
+        <property name="total" type="java.lang.Double">
+            <column name="total" precision="15">
+                <comment>总值</comment>
+            </column>
+        </property>
+        <property name="actualTotal" type="java.lang.Double">
+            <column name="actual_total" precision="15">
+                <comment>实付</comment>
+            </column>
+        </property>      
+        <property name="subMail" type="java.lang.String">
+            <column name="sub_mail">
+                <comment>邮箱</comment>
+            </column>
+        </property>
+        <property name="subTel" type="java.lang.String">
+            <column name="sub_tel">
+                <comment>电话</comment>
+            </column>
+        </property>
+        <property name="payId" type="java.lang.Long">
+            <column name="pay_id">
+                <comment>付款方式</comment>
+            </column>
+        </property>
+        <property name="payTypeId" type="java.lang.String">
+            <column name="pay_type_id" />
+        </property>
+        <property name="payTypeName" type="java.lang.String">
+            <column name="pay_type_name" />
+        </property>
+        <property name="subAdds" type="java.lang.String">
+            <column name="sub_adds">
+                <comment>地址</comment>
+            </column>
+        </property>
+        <property name="subPost" type="java.lang.String">
+            <column name="sub_post">
+                <comment>邮编</comment>
+            </column>
+        </property>
+        <property name="other" type="java.lang.String">
+            <column name="other">
+                <comment>其他备注</comment>
+            </column>
+        </property>
+        <property name="shopName" type="java.lang.String">
+            <column name="shop_name" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="updateUser" type="java.lang.String">
+            <column name="update_user">
+                <comment>修改人</comment>
+            </column>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time">
+                <comment>修改时间</comment>
+            </column>
+        </property>        
+        <property name="scoreId" type="java.lang.Long">
+            <column name="score_id">
+                <comment>付款方式</comment>
+            </column>
+        </property>
+        <property name="score" type="java.lang.Long">
+            <column name="score">
+                <comment>用户积分</comment>
+            </column>
+        </property>   
+         <property name="subAction" type="java.lang.String">
+            <column name="sub_action">
+                <comment>修改动作</comment>
+            </column>
+        </property> 
+        <property name="tradeNo" type="java.lang.String">
+            <column name="trade_no">
+                <comment>支付宝交易号</comment>
+            </column>
+        </property>  
+        <property name="dvyTypeId" type="java.lang.Long">
+            <column name="dvy_type_id">
+                <comment>物流方式ID</comment>
+            </column>
+        </property>        
+        <property name="deliveryFlowId" type="java.lang.String">
+            <column name="dvy_flow">
+                <comment>物流单号</comment>
+            </column>
+        </property>           
+    </class>
+</hibernate-mapping>

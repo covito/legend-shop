@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.legendesign.net/schema/legendshop"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:beans="http://www.springframework.org/schema/beans"
+        xmlns:tool="http://www.springframework.org/schema/tool"
+        targetNamespace="http://www.legendesign.net/schema/legendshop"
+        elementFormDefault="qualified" attributeFormDefault="unqualified">
+        <xsd:import namespace="http://www.springframework.org/schema/beans" schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.1.xsd" />
+        <xsd:element name="import">
+                <xsd:annotation>
+                        <xsd:documentation source="org.springframework.core.io.Resource"><![CDATA[
+                            Specifies an XML bean definition resource to import.
+                        ]]></xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                        <xsd:complexContent>
+                                <xsd:restriction base="xsd:anyType">
+                                        <xsd:attribute name="resource" type="xsd:string" use="required">
+                                                <xsd:annotation>
+                                                        <xsd:documentation><![CDATA[
+        The relative resource location of the XML (bean definition) file to import,
+        for example "myImport.xml" or "includes/myImport.xml" or "../myImport.xml".
+                                                        ]]></xsd:documentation>
+                                                </xsd:annotation>
+                                        </xsd:attribute>
+                                        <xsd:attribute name="matcher-class" type="xsd:string"
+                                                use="optional">
+                                                <xsd:annotation>
+                                                        <xsd:appinfo>
+                                                                <tool:annotation>
+                                                                        <tool:expected-type type="java.lang.Class" />
+                                                                        <tool:assignable-to type="com.legendshop.util.handler.AbstractPluginMatcher" />
+                                                                </tool:annotation>
+                                                        </xsd:appinfo>
+                                                </xsd:annotation>
+                                        </xsd:attribute>
+                                        <xsd:attribute name="type">
+                                        	<xsd:annotation>
+                                        		<xsd:documentation>
+                                        			<![CDATA[Import Type]]>
+                                        		</xsd:documentation>
+                                        	</xsd:annotation>
+                                        	<xsd:simpleType>
+                                        		<xsd:restriction
+                                        			base="xsd:string">
+                                        			<xsd:enumeration
+                                        				value="plugin">
+                                        			</xsd:enumeration>
+
+                                        		</xsd:restriction>
+                                        	</xsd:simpleType>
+                                        </xsd:attribute>
+                                        <xsd:attribute name="value" type="xsd:string">
+                                        </xsd:attribute>
+                                </xsd:restriction>
+                        </xsd:complexContent>
+                </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="plugin">
+                <xsd:complexType>
+                        <xsd:complexContent>
+                                <xsd:restriction base="xsd:anyType">
+                                        <xsd:attribute name="class" type="xsd:string"
+                                                use="required">
+                                                <xsd:annotation>
+                                                        <xsd:appinfo>
+                                                                <tool:annotation>
+                                                                        <tool:expected-type type="java.lang.Class" />
+                                                                        <tool:assignable-to type="com.legendshop.plugins.SimplePlugin" />
+                                                                </tool:annotation>
+                                                        </xsd:appinfo>
+                                                </xsd:annotation>
+                                        </xsd:attribute>
+                                         <xsd:attribute name="pulginId" type="xsd:string" use="required" />
+                                         <xsd:attribute name="pulginVersion" type="xsd:string" use="required" />
+                                         <xsd:attribute name="provider" type="xsd:string" use="required" />
+                                         <xsd:attribute name="status" type="xsd:string" use="required" />
+                                         <xsd:attribute name="required" type="xsd:string" use="required" />
+                                         <xsd:attribute name="springConfiguration" type="xsd:string" use="optional" />
+                                         <xsd:attribute name="i18n" type="xsd:string" use="optional" />
+                                         <xsd:attribute name="description" type="xsd:string" use="optional" />
+                                </xsd:restriction>
+                        </xsd:complexContent>
+                </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="map">
+                <xsd:annotation>
+                        <xsd:documentation
+                                source="org.springframework.beans.factory.config.MapFactoryBean">
+                                Builds a Map instance of the specified type, populated with
+                                the specified
+                                content.
+                        </xsd:documentation>
+                        <xsd:appinfo>
+                                <tool:annotation>
+                                        <tool:exports type="java.util.Map" />
+                                </tool:annotation>
+                        </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexType>
+                        <xsd:complexContent>
+                                <xsd:extension base="beans:mapType">
+                                        <xsd:attribute name="id" type="xsd:ID" />
+                                        <xsd:attribute name="map-class" type="xsd:string">
+                                                <xsd:annotation>
+                                                        <xsd:appinfo>
+                                                                <tool:annotation>
+                                                                        <tool:expected-type
+                                                                                type="java.lang.Class" />
+                                                                        <tool:assignable-to
+                                                                                type="java.util.Map" />
+                                                                </tool:annotation>
+                                                        </xsd:appinfo>
+                                                </xsd:annotation>
+                                        </xsd:attribute>
+                                        <xsd:attribute name="scope" type="xsd:string">
+                                                <xsd:annotation>
+                                                        <xsd:documentation><![CDATA[
+        The scope of this collection bean: typically "singleton" (one shared instance,
+        which will be returned by all calls to getBean with the given id), or
+        "prototype" (independent instance resulting from each call to getBean).
+        Default is "singleton". Further scopes, such as "request" or "session",
+        might be supported by extended bean factories (e.g. in a web environment).
+                                                        ]]></xsd:documentation>
+                                                </xsd:annotation>
+                                        </xsd:attribute>
+                                        <xsd:attribute name="default-key"
+                                                type="xsd:string">
+                                        </xsd:attribute>
+                                </xsd:extension>
+                        </xsd:complexContent>
+                </xsd:complexType>
+        </xsd:element>
+       
+        <xsd:element name="list">
+                <xsd:annotation>
+                        <xsd:documentation
+                                source="org.springframework.beans.factory.config.ListFactoryBean">
+                                Builds a Map instance of the specified type, populated with
+                                the specified
+                                content.
+                        </xsd:documentation>
+                        <xsd:appinfo>
+                                <tool:annotation>
+                                        <tool:exports type="java.util.List" />
+                                </tool:annotation>
+                        </xsd:appinfo>
+                </xsd:annotation>
+                <xsd:complexType>
+                        <xsd:complexContent>
+                                <xsd:extension base="beans:listOrSetType">
+                                        <xsd:attribute name="id" type="xsd:ID" />
+                                        <xsd:attribute name="list-class" type="xsd:string">
+                                                <xsd:annotation>
+                                                        <xsd:appinfo>
+                                                                <tool:annotation>
+                                                                        <tool:expected-type type="java.lang.Class" />
+                                                                        <tool:assignable-to type="java.util.List" />
+                                                                </tool:annotation>
+                                                        </xsd:appinfo>
+                                                </xsd:annotation>
+                                        </xsd:attribute>
+                                        <xsd:attribute name="scope" type="xsd:string">
+                                                <xsd:annotation>
+                                                        <xsd:documentation><![CDATA[
+        The scope of this collection bean: typically "singleton" (one shared instance,
+        which will be returned by all calls to getBean with the given id), or
+        "prototype" (independent instance resulting from each call to getBean).
+        Default is "singleton". Further scopes, such as "request" or "session",
+        might be supported by extended bean factories (e.g. in a web environment).
+                                                        ]]></xsd:documentation>
+                                                </xsd:annotation>
+                                        </xsd:attribute>
+                                </xsd:extension>
+                        </xsd:complexContent>
+                </xsd:complexType>
+        </xsd:element>
+</xsd:schema>

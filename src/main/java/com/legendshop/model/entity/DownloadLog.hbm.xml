@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+	<class name="com.legendshop.model.entity.DownloadLog" table="ls_dol_log">
+	<id name="dlId" column="dl_id" type="java.lang.Long">
+     <generator class="native" />
+	</id>
+	 <property name="country" type="java.lang.String">
+            <column name="country">
+                <comment>获得IP所在国家，如果在中国，直接显示省市</comment>
+            </column>
+        </property>
+        <property name="area" type="java.lang.String">
+            <column name="area">
+                <comment>获得IP所在区域</comment>
+            </column>
+        </property>
+	<property name="ip" column="ip" type="java.lang.String" />
+	<property name="userName" column="user_name" type="java.lang.String" />
+	<property name="shopName" column="shop_name" type="java.lang.String" />
+	<property name="fileName" column="file_name" type="java.lang.String" />
+	<property name="date" column="rec_date" type="java.util.Date" />
+
+	</class>
+</hibernate-mapping>

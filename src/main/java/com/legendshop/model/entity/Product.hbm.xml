@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.Product" table="ls_prod">
+        <id name="prodId" type="java.lang.Long">
+            <column name="prod_id" />
+            <generator class="native" /> 
+        </id>
+        <property name="sortId" type="java.lang.Long">
+            <column name="sort_id">
+                <comment>一级分类</comment>
+            </column>
+        </property>
+        <property name="nsortId" type="java.lang.Long">
+            <column name="nsort_id">
+                <comment>二级分类</comment>
+            </column>
+        </property>
+        <property name="subNsortId" type="java.lang.Long">
+            <column name="sub_nsort_id">
+                <comment>三级分类</comment>
+            </column>
+        </property>
+          <property name="globalSort" type="java.lang.Long">
+            <column name="global_sort">
+                <comment>全局商城一级分类</comment>
+            </column>
+        </property>
+        <property name="globalNsort" type="java.lang.Long">
+            <column name="global_nsort">
+                <comment>全局商城二级分类</comment>
+            </column>
+        </property>
+        <property name="globalSubSort" type="java.lang.Long">
+            <column name="global_subsort">
+                <comment>全局商城三级分类</comment>
+            </column>
+        </property>
+        <property name="modelId" type="java.lang.String">
+            <column name="model_id">
+                <comment>型号</comment>
+            </column>
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name">
+                <comment>商品名称</comment>
+            </column>
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price">
+                <comment>商品原价</comment>
+            </column>
+        </property>
+        <property name="cash" type="java.lang.Double">
+            <column name="cash">
+                <comment>商品现价</comment>
+            </column>
+        </property>
+        <property name="proxyPrice" type="java.lang.Double">
+            <column name="proxy_price">
+                <comment>代理价</comment>
+            </column>
+        </property>
+        <property name="carriage" type="java.lang.Double">
+            <column name="carriage">
+                <comment>运费</comment>
+            </column>
+        </property>
+        <property name="brief" type="java.lang.String">
+            <column name="brief">
+                <comment>简要描述</comment>
+            </column>
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content">
+                <comment>详细描述</comment>
+            </column>
+        </property>
+        <property name="views" type="java.lang.Integer">
+            <column name="views">
+                <comment>观看人数</comment>
+            </column>
+        </property>
+        <property name="buys" type="java.lang.Integer">
+            <column name="buys">
+                <comment>以卖出数</comment>
+            </column>
+        </property>
+         <property name="comments" type="java.lang.Integer">
+            <column name="comments">
+                <comment>评论数</comment>
+            </column>
+        </property>       
+        <property name="recDate" type="java.util.Date">
+            <column name="rec_date">
+                <comment>录入时间</comment>
+            </column>
+        </property>
+         <property name="smallPic" type="java.lang.String">
+            <column name="small_pic">
+                <comment>小图片</comment>
+            </column>
+        </property>
+        <property name="useSmallPic" type="java.lang.String">
+            <column name="use_small_pic">
+                <comment>是否使用小图片</comment>
+            </column>
+        </property>
+        <property name="pic" type="java.lang.String">
+            <column name="pic">
+                <comment>图片</comment>
+            </column>
+        </property>
+        <property name="commend" type="java.lang.String">
+            <column name="is_commend" />
+        </property>
+        <property name="hot" type="java.lang.String">
+            <column name="is_hot" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>默认是1，表示正常状态，如果管理员发现有非法图片，可以关闭该图片，设置为0即可</comment>
+            </column>
+        </property>
+        <property name="modifyDate" type="java.util.Date">
+            <column name="modify_date">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id" />
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>所属用户名称</comment>
+            </column>
+        </property>
+        <property name="startDate" type="java.util.Date">
+            <column name="start_date">
+                <comment>开始有效时间</comment>
+            </column>
+        </property>
+        <property name="endDate" type="java.util.Date">
+            <column name="end_date">
+                <comment>结束有效时间</comment>
+            </column>
+        </property>
+        <property name="stocks" type="java.lang.Integer">
+            <column name="stocks">
+                <comment>库存量</comment>
+            </column>
+        </property>
+        <property name="prodType" type="java.lang.String">
+            <column name="prod_type">
+                <comment>商品类型，1.普通商品，2团购商品，3打折商品(填写了原价、现价就是打折商品)，4二手商品</comment>
+            </column>
+        </property>
+        <property name="keyWord" type="java.lang.String">
+            <column name="key_word">
+                <comment>关键字</comment>
+            </column>
+        </property>
+        <property name="attribute" type="java.lang.String">
+            <column name="attribute">
+                <comment>产品动态属性</comment>
+            </column>
+        </property>
+        <property name="parameter" type="java.lang.String">
+            <column name="parameter">
+                <comment>产品动态参数</comment>
+            </column>
+        </property>
+        <property name="brandId" type="java.lang.Long">
+            <column name="brand_id">
+                <comment>品牌</comment>
+            </column>
+        </property>
+         <property name="globalBrand" type="java.lang.Long">
+            <column name="global_brand">
+                <comment>全局商城品牌</comment>
+            </column>
+        </property>
+        <property name="actualStocks" type="java.lang.Integer">
+            <column name="actual_stocks">
+                <comment>实际库存量</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.VisitLog" table="ls_vit_log">
+        <id name="visitId" type="java.lang.Long">
+            <column name="visit_id" />
+            <generator class="native"></generator>
+        </id>
+        <property name="ip" type="java.lang.String">
+            <column name="ip">
+                <comment>IP</comment>
+            </column>
+        </property>
+        <property name="country" type="java.lang.String">
+            <column name="country">
+                <comment>获得IP所在国家，如果在中国，直接显示省市</comment>
+            </column>
+        </property>
+        <property name="area" type="java.lang.String">
+            <column name="area">
+                <comment>获得IP所在区域</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>用户名</comment>
+            </column>
+        </property>
+        <property name="shopName" type="java.lang.String">
+            <column name="shop_name">
+                <comment>商铺名称</comment>
+            </column>
+        </property>
+       <property name="productId" type="java.lang.String">
+            <column name="product_id">
+                <comment>产品ID</comment>
+            </column>
+        </property>
+        <property name="productName" type="java.lang.String">
+            <column name="product_name">
+                <comment>产品名称</comment>
+            </column>
+        </property>
+        <property name="page" type="java.lang.String">
+            <column name="page">
+                <comment>访问页面</comment>
+            </column>
+        </property>
+        <property name="date" type="java.util.Date">
+            <column name="rec_date">
+                <comment>访问时间</comment>
+            </column>
+        </property>
+        <property name="visitNum" type="java.lang.Integer">
+            <column name="visit_num">
+                <comment>访问次数</comment>
+            </column>
+        </property>        
+        
+    </class>
+</hibernate-mapping>

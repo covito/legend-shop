@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--  LegendShop 版权所有 2009-2011,并保留所有权利。 -->
+<hibernate-mapping>
+    <class name="com.legendshop.model.entity.Sort" table="ls_sort">
+        	<!-- 
+	 <cache usage="read-write"/>
+	  -->
+        <id name="sortId" type="java.lang.Long">
+            <column name="sort_id" />
+            <generator class="native" />
+        </id>
+        <property name="sortName" type="java.lang.String">
+            <column name="sort_name">
+                <comment>分类名称</comment>
+            </column>
+        </property>
+        <property name="picture" type="java.lang.String">
+            <column name="picture">
+                <comment>分类的显示图片</comment>
+            </column>
+        </property>
+        <property name="seq" type="java.lang.Integer">
+            <column name="seq">
+                <comment>商品分类顺序</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>默认是1，表示正常状态,0为下线状态</comment>
+            </column>
+        </property>
+         <property name="sortType" type="java.lang.String">
+            <column name="sort_type">
+                <comment>产品分类类型</comment>
+            </column>
+        </property>
+        <property name="userId" type="java.lang.String">
+            <column name="user_id">
+                <comment>用户ID</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name">
+                <comment>用户名称</comment>
+            </column>
+        </property>
+        <property name="headerMenu" type="java.lang.Integer">
+            <column name="header_menu">
+                <comment>分类状态，1：首页菜单展示，0：首页菜单不展示</comment>
+            </column>
+        </property>
+        <property name="navigationMenu" type="java.lang.Integer">
+            <column name="navigation_menu">
+                <comment>分类状态，1：首页菜单展示，0：首页菜单不展示</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

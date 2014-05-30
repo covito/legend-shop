@@ -1,0 +1,47 @@
+BODY {
+	MARGIN-TOP: 0px;
+	SCROLLBAR-FACE-COLOR: #ECF4EF;
+	FONT-SIZE: 12px;
+	BACKGROUND: #cad7f7;
+	SCROLLBAR-HIGHLIGHT-COLOR: #ECF4EF;
+	SCROLLBAR-SHADOW-COLOR: #ECF4EF;
+	SCROLLBAR-3DLIGHT-COLOR: #ECF4EF;
+	SCROLLBAR-ARROW-COLOR: #ffffff;
+	SCROLLBAR-TRACK-COLOR: #ECF4EF;
+	SCROLLBAR-DARKSHADOW-COLOR: #ECF4EF;
+	background-color: #DEF3E0;
+}
+TH {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(images/admin_bg_1.gif); COLOR: white; BACKGROUND-COLOR: #99CC99
+}
+.tableBorder {
+	BORDER-RIGHT: #183789 1px solid; BORDER-TOP: #183789 1px solid; BORDER-LEFT: #183789 1px solid; WIDTH: 100%; BORDER-BOTTOM: #183789 1px solid; BACKGROUND-COLOR: #ffffff
+}
+table{font-size:13px;
+}
+TD.forumRow {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: #D6F1E6; PADDING-BOTTOM: 3px; PADDING-TOP: 3px
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+	color: #000066;
+}
+a:visited {
+	text-decoration: none;
+	color: #000066;
+}
+.title1{font-size: x-large}
+
+.title2{font-size:14px}
+
+.title3{font-size:12px}
+
+TEXTAREA {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 12px; BORDER-BOTTOM-WIDTH: 1px; BORDER-RIGHT-WIDTH: 1px
+}
+INPUT {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 12px; BORDER-BOTTOM-WIDTH: 1px; BORDER-RIGHT-WIDTH: 1px
+}
